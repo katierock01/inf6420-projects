@@ -8,6 +8,9 @@ desktop.ini
 *.tar
 *.tar.gz
 
+# Office docs (keep out of repo by default)
+*.docx
+
 # Python cache
 __pycache__/
 *.pyc
