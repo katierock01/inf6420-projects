@@ -1,0 +1,86 @@
+/* Base typography */
+html, body {
+	margin: 0;
+	padding: 0;
+}
+
+* {
+	box-sizing: border-box; /* CRITICAL: includes padding in width calculations */
+}
+
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 7px; /* Smaller body text per request */
+	background: #e2e8f0; /* non-white background as required */
+	color: #111827;
+	line-height: 1.62; /* maintain readability */
+}
+
+/* Layout */
+#wrapper {
+	width: 90%;
+	max-width: 900px;
+	margin: 10px auto;
+	background: #f1f5f9; /* wrapper is not white */
+	box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+#header {
+	background: #006633; /* Wayne State green tone */
+	color: #ffffff;
+	padding: 15px 20px;
+}
+
+#navigation {
+	float: left;
+	width: 22%;
+	background: #cbd5e1; /* non-white */
+	padding: 10px;
+	min-height: 300px;
+	text-align: center; /* Center navigation links for symmetry */
+}
+#navigation ul { list-style: none; margin: 0; padding: 0; }
+#navigation li { margin: 22px 0; } /* More spacing between menu items */
+#navigation a { color: #006633; text-decoration: none; font-weight: 600; }
+#navigation a:hover { text-decoration: underline; }
+
+#maincontent {
+	float: left;
+	width: 73%;
+	margin-left: 5%; /* nudge main text farther from nav */
+	background: #ffffff; /* the ONLY white section */
+	padding: 15px 20px;
+	min-height: 300px;
+}
+
+#footer {
+	clear: both;
+	background: #004d26;
+	color: #ffffff;
+	padding: 12px 20px;
+	font-style: italic; /* footer in italics */
+	font-size: 0.9em;
+	text-align: center;
+}
+
+#footer a {
+	color: #ffffff;
+	text-decoration: none;
+	font-weight: 600;
+}
+
+#footer a:hover {
+	text-decoration: underline;
+}
+
+/* Typography */
+h1 { font-family: Georgia, "Times New Roman", serif; font-size: 2.0em; margin: 0.4em 0; text-align: center; }
+h2 { font-family: Georgia, "Times New Roman", serif; font-size: 1.6em; margin: 0.5em 0; text-align: center; }
+h3 { font-family: Georgia, "Times New Roman", serif; font-size: 1.3em; margin: 0.5em 0; text-align: center; }
+p { margin: 0.8em 0; font-size: 0.9em; }
+
+/* Images inside main content if any */
+/* Constrain images so they don't dominate the layout */
+#maincontent img { max-width: 65%; height: auto; display: block; margin: 8px auto; }
+/* Make the very first image on the page much smaller */
+#maincontent img:first-of-type { max-width: 40%; }

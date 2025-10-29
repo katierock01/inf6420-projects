@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Katie Rock – INF 6420 Project 1</title>
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 12px;
+            margin: 0;
+            padding: 0;
+            background: #fff;
+            color: #333;
+            line-height: 1.5;
+        }
+        .profile-photo {
+            display: block;
+            margin: 18px auto 10px auto;
+            border-radius: 12px;
+            max-width: 180px;
+            width: 100%;
+            height: auto;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+            border: 3px solid #e0e0e0;
+            background: #fff;
+            padding: 10px;
+        }
+        main {
+            width: 95%;
+            max-width: 800px;
+            margin: 24px auto;
+            padding: 22px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+        }
+        h1, h2, h3 {
+            color: #006633;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        h1 {
+            font-size: 1.5em;
+            margin-bottom: 0.2em;
+        }
+        h2 {
+            font-size: 1.15em;
+            margin-bottom: 0.2em;
+        }
+        h3 {
+            font-size: 1.05em;
+            margin-top: 1em;
+        }
+        p, label, input, select, textarea {
+            font-size: 1em;
+        }
+        header {
+            background: #006633;
+            color: #ffffff;
+            padding: 20px;
+            text-align: center;
+        }
+        header h1, header h2 {
+            color: #ffffff;
+            margin: 8px auto;
+            max-width: 800px;
+        }
+        footer {
+            font-size: 0.9em;
+            color: #555;
+            background: #f8f9fa;
+            border-top: 1px solid #eee;
+            padding: 10px;
+            text-align: center;
+        }
+        /* Form Styles */
+        .projects-section { background: #f8f9fa; padding: 20px; border-radius: 6px; margin-top: 25px; }
+        .projects-section h3 { margin-top: 0; }
+        .project-link { display: inline-block; background: #006633; color: white; padding: 10px 18px; text-decoration: none; border-radius: 5px; margin: 10px 10px 10px 0; transition: background 0.3s; }
+        .project-link:hover { background: #004d26; }
+        .feedback-form { background: #f0fdf4; padding: 20px; border-radius: 6px; margin-top: 25px; }
+        fieldset { border: 2px solid #006633; border-radius: 6px; padding: 15px; margin: 15px 0; background: white; }
+        legend { color: #006633; font-weight: bold; padding: 0 10px; }
+        label { display: block; margin: 7px 0 4px; font-weight: 500; font-size: 1em; }
+        input[type="text"], input[type="email"], select, textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+            font-size: 1.08em;
+        }
+        textarea {
+            min-height: 90px;
+            resize: vertical;
+        }
+        input[type="radio"], input[type="checkbox"] { margin-right: 5px; }
+        .radio-group, .checkbox-group { margin: 10px 0; }
+        input[type="submit"] { background: #006633; color: white; padding: 7px 18px; border: none; border-radius: 5px; cursor: pointer; font-size: 1em; margin-top: 8px; }
+        input[type="submit"]:hover { background: #004d26; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>INF 6420 – Project 1</h1>
+    <h2>Katie Rock, LLMSW</h2>
+    </header>
+    <main>
+        <!-- Your image -->
+        <img src="img/myphoto.jpeg" alt="Photo of Katie Rock" class="profile-photo">
+        <h3>About Me</h3>
+        <p>Hello! My name is <strong>Katie Rock</strong>, and I'm a graduate student in the <em>Information Sciences program at Wayne State University</em>. This page was built as part of Project 1 to demonstrate basic web publishing skills. Learn more about the program at the <a href="https://wayne.edu/sis" target="_blank" rel="noopener">School of Information Sciences</a>.</p>
+        <h3>Interests</h3>
+        <p>I'm passionate about combining <strong>information management, social impact, and technology</strong>. In particular, I explore how data and AI can be used to drive innovation, advocacy, and social change.</p>
+        <!-- Projects Section -->
+        <div class="projects-section">
+            <h3>My Projects</h3>
+            <p>Explore my course projects:</p>
+            <a href="inf6420-projects/rock-Project1.1/rock-Project1.1.index.html" class="project-link" target="_blank">Project 2.1: Personal Page</a>
+            <a href="inf6420-projects/rock-Project2.2/rock-project2-2.html" class="project-link" target="_blank">Project 2.2: HTML Conversion</a>
+            <a href="inf6420-projects/project3/home.html" class="project-link" target="_blank">Project 3: Squirrels Website</a>
+        </div>
+        <!-- Feedback Form -->
+        <div class="feedback-form">
+            <h3>Visitor Feedback</h3>
+            <p>Please share your feedback about this course page!</p>
+            <form action="showform.php" method="post">
+                <fieldset>
+                    <legend>Personal Information</legend>
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </fieldset>
+                <fieldset>
+                    <legend>Course Experience</legend>
+                    <label>How would you rate this course?</label>
+                    <div class="radio-group">
+                        <input type="radio" id="excellent" name="rating" value="Excellent" required>
+                        <label for="excellent" style="display: inline;">Excellent</label><br>
+                        <input type="radio" id="good" name="rating" value="Good">
+                        <label for="good" style="display: inline;">Good</label><br>
+                        <input type="radio" id="fair" name="rating" value="Fair">
+                        <label for="fair" style="display: inline;">Fair</label><br>
+                        <input type="radio" id="poor" name="rating" value="Poor">
+                        <label for="poor" style="display: inline;">Poor</label>
+                    </div>
+                    <label for="interest">What interests you most?</label>
+                    <select id="interest" name="interest" required>
+                        <option value="">-- Select an option --</option>
+                        <option value="Web Design">Web Design</option>
+                        <option value="Programming">Programming</option>
+                        <option value="Database">Database Management</option>
+                        <option value="Data Analysis">Data Analysis</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </fieldset>
+                <fieldset>
+                    <legend>Topics of Interest</legend>
+                    <label>Which topics would you like to learn more about? (Check all that apply)</label>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="html" name="extras[]" value="HTML/CSS">
+                        <label for="html" style="display: inline;">HTML/CSS</label><br>
+                        <input type="checkbox" id="javascript" name="extras[]" value="JavaScript">
+                        <label for="javascript" style="display: inline;">JavaScript</label><br>
+                        <input type="checkbox" id="php" name="extras[]" value="PHP">
+                        <label for="php" style="display: inline;">PHP</label><br>
+                        <input type="checkbox" id="responsive" name="extras[]" value="Responsive Design">
+                        <label for="responsive" style="display: inline;">Responsive Design</label><br>
+                        <input type="checkbox" id="accessibility" name="extras[]" value="Web Accessibility">
+                        <label for="accessibility" style="display: inline;">Web Accessibility</label>
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <legend>Additional Comments</legend>
+                    <label for="comments">Your comments or suggestions:</label>
+                    <textarea id="comments" name="comments" placeholder="Share your thoughts..."></textarea>
+                </fieldset>
+                <input type="submit" value="Submit Feedback">
+            </form>
+        </div>
+    </main>
+    <footer>
+    <p>&copy; 2025 Katie Rock, LLMSW | Wayne State University</p>
+    <p>
+        <a href="https://validator.w3.org/nu/?doc=http://141.217.120.86/fn9575/html/rock-INF6420-index.html" target="_blank" rel="noopener" style="color: #006633; text-decoration: none; font-weight: 600;">Validate HTML</a>
+    </p>
+    </footer>
+</body>
+</html>
