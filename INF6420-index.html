@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Katie Rock – INF 6420 Course Projects</title>
+  <meta name="description" content="INF 6420 course homepage showcasing all projects by Katie Rock">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <style>
+    :root {
+      --primary-color: #3755be;
+      --accent-color: #ee7752;
+      --background-color: #f1f4f8;
+      --heading-font: 'Montserrat', Arial, sans-serif;
+      --body-font: 'Open Sans', Arial, sans-serif;
+    }
+    
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    body {
+      background: var(--background-color);
+      color: #222;
+      font-family: var(--body-font);
+      line-height: 1.6;
+    }
+    
+    h1, h2, h3 {
+      font-family: var(--heading-font);
+      color: var(--primary-color);
+    }
+    
+    a {
+      color: var(--accent-color);
+      text-decoration: none;
+      transition: opacity 0.3s ease;
+    }
+    
+    a:hover {
+      opacity: 0.8;
+    }
+    
+    header {
+      background: linear-gradient(135deg, var(--primary-color), #5070d8);
+      color: white;
+      padding: 3rem 1rem 2rem;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    
+    header h1 {
+      color: white;
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    }
+    
+    header p {
+      color: #f0f4ff;
+      font-size: 1.1rem;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem 1rem;
+    }
+    
+    .intro-section {
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+    
+    .video-container {
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+      margin-bottom: 2rem;
+    }
+    
+    .video-container h2 {
+      margin-bottom: 1.5rem;
+    }
+    
+    .video-wrapper {
+      position: relative;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    video {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    
+    .project-card {
+      background: white;
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .project-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+    }
+    
+    .project-card h3 {
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+    }
+    
+    .project-card p {
+      color: #555;
+      margin-bottom: 1rem;
+    }
+    
+    .project-link {
+      display: inline-block;
+      background: var(--accent-color);
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border-radius: 6px;
+      font-weight: 600;
+      transition: background-color 0.3s ease;
+    }
+    
+    .project-link:hover {
+      background: #d96642;
+      opacity: 1;
+    }
+    
+    footer {
+      font-size: 0.8em;
+      font-style: italic;
+      color: #666;
+      text-align: center;
+      padding: 2rem 1rem;
+      margin-top: 3rem;
+      border-top: 1px solid #ddd;
+    }
+    
+    .video-note {
+      background: #fff3cd;
+      border: 1px solid #ffc107;
+      padding: 1rem;
+      border-radius: 8px;
+      margin-top: 1rem;
+      color: #856404;
+      font-size: 0.9rem;
+    }
+    
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2rem;
+      }
+      
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>INF 6420 – Web Development</h1>
+    <p>Course Projects by Katie Rock, LLMSW</p>
+  </header>
+  
+  <div class="container">
+    <div class="intro-section">
+      <h2>Welcome to My Course Portfolio</h2>
+      <p>This page serves as the central hub for all my INF 6420 projects. Each project demonstrates different web development skills and techniques learned throughout the course.</p>
+    </div>
+    
+    <div class="video-container">
+      <h2>Self Introduction Video</h2>
+      <div class="video-wrapper">
+        <video controls>
+          <source src="self_intro.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <div class="video-note">
+          <strong>Note:</strong> If the video doesn't load, the file self_intro.mp4 may need to be added to the repository root.
+        </div>
+      </div>
+    </div>
+    
+    <section>
+      <h2>Course Projects</h2>
+      <div class="projects-grid">
+        <div class="project-card">
+          <h3>Project 1.1</h3>
+          <p>Personal introduction page with basic HTML/CSS skills.</p>
+          <a href="rock-Project1.1/rock-Project1.1.index.html" class="project-link">View Project</a>
+        </div>
+        
+        <div class="project-card">
+          <h3>Project 2.1</h3>
+          <p>Advanced page design with documentation.</p>
+          <a href="rock-Project2.1/index.html" class="project-link">View Project</a>
+        </div>
+        
+        <div class="project-card">
+          <h3>Project 2.2</h3>
+          <p>HTML conversion with internal CSS, tables, and styled lists.</p>
+          <a href="project2.2/index.html" class="project-link">View Project</a>
+        </div>
+        
+        <div class="project-card">
+          <h3>Project 2.3</h3>
+          <p>Additional web development exercises.</p>
+          <a href="rock-Project2.3/index.html" class="project-link">View Project</a>
+        </div>
+        
+        <div class="project-card">
+          <h3>Project 3</h3>
+          <p>Interactive website with forms and PHP backend.</p>
+          <a href="project3/home.html" class="project-link">View Project</a>
+        </div>
+      </div>
+    </section>
+  </div>
+  
+  <footer>
+    <p>&copy; 2025 Katie Rock | Wayne State University</p>
+    <p><a href="https://validator.w3.org/nu/?doc=" id="validate-html">Validate HTML</a> | <a href="https://jigsaw.w3.org/css-validator/validator?uri=" id="validate-css">Validate CSS</a></p>
+  </footer>
+  
+  <script>
+    // Make validator links dynamic to current URL
+    (function(){
+      try {
+        const url = window.location.href;
+        const html = document.getElementById('validate-html');
+        const css = document.getElementById('validate-css');
+        if (html) html.href = 'https://validator.w3.org/nu/?doc=' + encodeURIComponent(url);
+        if (css) css.href = 'https://jigsaw.w3.org/css-validator/validator?uri=' + encodeURIComponent(url);
+      } catch (e) { /* noop */ }
+    })();
+  </script>
+</body>
+</html>
