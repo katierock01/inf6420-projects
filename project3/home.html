@@ -46,12 +46,23 @@
 	<div id="footer">
 	<p>&copy; 2011 Faux Web Design Group</p>
 	<p>
-			<a href="https://validator.w3.org/nu/?doc=http://141.217.120.86/fn9575/html/inf6420-projects/project3/home.html" target="_blank" rel="noopener">Validate HTML</a>
-			|
-			<a href="https://jigsaw.w3.org/css-validator/validator?uri=http://141.217.120.86/fn9575/html/inf6420-projects/project3/squirrels.css" target="_blank" rel="noopener">Validate CSS</a>
+		<a href="../INF6420-index.html">Course Home</a> |
+		<a href="https://validator.w3.org/nu/?doc=" id="validate-html" target="_blank" rel="noopener">Validate HTML</a> |
+		<a href="https://jigsaw.w3.org/css-validator/validator?uri=" id="validate-css" target="_blank" rel="noopener">Validate CSS</a>
 	</p>
 	</div>
  
 </div>
+<script>
+	(function(){
+		try {
+			const url = window.location.href;
+			const html = document.getElementById('validate-html');
+			const css = document.getElementById('validate-css');
+			if (html) html.href = 'https://validator.w3.org/nu/?doc=' + encodeURIComponent(url);
+			if (css) css.href = 'https://jigsaw.w3.org/css-validator/validator?uri=' + encodeURIComponent(url.replace(/[^/]*$/, 'squirrels.css'));
+		} catch (e) { /* noop */ }
+	})();
+</script>
 </body>
 </html>
