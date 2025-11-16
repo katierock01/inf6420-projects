@@ -8,17 +8,14 @@
   <style>
     /* Internal CSS Styling */
     :root {
-      /* EmpathTech palette */
+      /* EmpathTech palette - consolidated variables */
       --primary-color: #3755be;
       --accent-color: #ee7752;
       --background-color: #f1f4f8;
       --heading-font: 'Montserrat', Arial, sans-serif;
       --body-font: 'Open Sans', Arial, sans-serif;
       --text-color: #1A1A1A;
-      --bg-color: #F9FAFB;
       --overlay-bg: rgba(255, 255, 255, 0.96);
-      --primary-accent: #3755be;
-      --link-color: #ee7752;
       --link-hover: #d96642;
     }
     * {
@@ -28,16 +25,13 @@
     }
     
     body {
-      /* Background image with a soft gradient fallback
-         Note: If you prefer a JPG, place `images/background.jpg` and change the URL below to `../images/background.jpg`.
-         Keep the JPG around ~1920×1080 and ~300–400 KB for performance, and ensure text contrast remains ≥ 4.5:1.
-      */
-      background-color: var(--bg-color); /* fallback color */
+      /* Background image with a soft gradient fallback */
+      background-color: var(--background-color);
       background-image: url('../images/background.svg');
       background-size: cover;
       background-attachment: fixed;
       background-position: center;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-family: var(--body-font);
       line-height: 1.6;
       color: var(--text-color);
       padding: 20px;
@@ -52,18 +46,42 @@
       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
     }
     /* Simple top-nav utility */
-    .top-nav { max-width: 900px; margin: 0 auto 12px; display:flex; justify-content:space-between; align-items:center; }
-  .top-nav a { color: var(--link-color); text-decoration: underline; text-underline-offset: 2px; font-weight:600; background:#e8f4ec; border:1px solid #cfe8d8; padding:7px 10px; border-radius:8px; }
+    .top-nav { 
+      max-width: 900px; 
+      margin: 0 auto 12px; 
+      display: flex; 
+      justify-content: space-between; 
+      align-items: center; 
+    }
+    .top-nav a { 
+      color: var(--accent-color); 
+      text-decoration: underline; 
+      text-underline-offset: 2px; 
+      font-weight: 600; 
+      background: #e8f4ec; 
+      border: 1px solid #cfe8d8; 
+      padding: 7px 10px; 
+      border-radius: 8px; 
+    }
     .top-nav a:hover { color: var(--link-hover); }
+    .top-nav a:focus { 
+      outline: 3px solid var(--accent-color); 
+      outline-offset: 2px; 
+    }
 
     /* Global link styles */
-    a { color: var(--link-color); text-decoration: underline; text-underline-offset: 2px; }
+    a { color: var(--accent-color); text-decoration: underline; text-underline-offset: 2px; }
     a:hover { color: var(--link-hover); }
+    a:focus { 
+      outline: 3px solid var(--accent-color); 
+      outline-offset: 2px; 
+      border-radius: 4px;
+    }
     
-    /* Headings with serif font and different color */
+    /* Headings with serif font */
     h1, h2, h3, h4, h5, h6 {
       font-family: Georgia, 'Times New Roman', Times, serif;
-      color: var(--primary-accent);
+      color: var(--primary-color);
       margin-top: 30px;
       margin-bottom: 15px;
     }
@@ -72,7 +90,7 @@
       font-size: 2.5em;
       text-align: center;
       margin-top: 0;
-      border-bottom: 3px solid var(--primary-accent);
+      border-bottom: 3px solid var(--primary-color);
       padding-bottom: 15px;
     }
     
@@ -96,15 +114,15 @@
       width: 100%;
       border-collapse: collapse;
       margin: 25px 0;
-      border: 3px solid var(--primary-accent);
+      border: 3px solid var(--primary-color);
     }
     
     th {
-      background-color: var(--primary-accent);
+      background-color: var(--primary-color);
       color: white;
       padding: 12px;
       text-align: left;
-      border: 2px solid var(--primary-accent);
+      border: 2px solid var(--primary-color);
       font-family: Georgia, serif;
     }
     
@@ -147,14 +165,14 @@
     .references {
       margin-top: 40px;
       padding-top: 20px;
-      border-top: 2px solid var(--primary-accent);
+      border-top: 2px solid var(--primary-color);
     }
     
     .validation-links {
       margin-top: 50px;
       padding: 20px;
       background-color: #f0fff7; /* soft green background */
-      border: 2px solid var(--primary-accent);
+      border: 2px solid var(--primary-color);
       border-radius: 5px;
       text-align: center;
     }
@@ -163,7 +181,7 @@
       display: inline-block;
       margin: 10px 15px;
       padding: 10px 20px;
-      background-color: var(--primary-accent);
+      background-color: var(--primary-color);
       color: white;
       text-decoration: none;
       border-radius: 5px;
@@ -186,19 +204,19 @@
     }
     .skip-link:focus {
       left: 12px; top: 12px; width: auto; height: auto; padding: 8px 12px;
-      background: #fff; border: 2px solid var(--primary-accent); border-radius: 6px; z-index: 1000;
+      background: #fff; border: 2px solid var(--primary-color); border-radius: 6px; z-index: 1000;
     }
     figure { margin: 20px auto; text-align: center; }
     figcaption { font-size: 0.9em; color: #555; margin-top: 8px; }
     blockquote {
-      border-left: 4px solid var(--primary-accent);
+      border-left: 4px solid var(--primary-color);
       padding: 10px 16px;
       /* Subtle tint using RGBA for broad validator compatibility */
       background: rgba(17, 87, 64, 0.10); /* based on #115740 */
       font-style: italic; margin: 16px 0;
     }
   table caption { caption-side: top; font-weight: 600; padding: 8px; color: #0d4230; text-align: left; }
-    footer { margin-top: 40px; padding-top: 20px; border-top: 2px solid var(--primary-accent); font-size: 0.95em; color: #444; }
+    footer { margin-top: 40px; padding-top: 20px; border-top: 2px solid var(--primary-color); font-size: 0.95em; color: #444; }
 
     /* Respect reduced motion */
     @media (prefers-reduced-motion: reduce) {

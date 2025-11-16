@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>INF 6420 – Project 2.2</title>
+  <meta name="description" content="Project 2.2: Research paper on the impact of Artificial Intelligence on Web Accessibility">
+  <meta name="author" content="Katie Rock">
   <link rel="icon" href="../favicon.svg" type="image/svg+xml">
   <style>
     :root {
@@ -35,6 +37,12 @@
     a {
       color: var(--accent-color);
       text-decoration: none;
+    }
+    
+    a:focus {
+      outline: 3px solid var(--accent-color);
+      outline-offset: 2px;
+      border-radius: 4px;
     }
     
     header {
@@ -116,6 +124,11 @@
       background: #d96642;
     }
     
+    .project-link:focus {
+      outline: 3px solid var(--primary-color);
+      outline-offset: 2px;
+    }
+    
     footer {
       font-size: 0.8em;
       font-style: italic;
@@ -129,30 +142,55 @@
     footer a {
       color: var(--accent-color);
     }
+    
+    /* Print styles */
+    @media print {
+      body {
+        background: white;
+      }
+      header, .bar {
+        background: white !important;
+        color: black !important;
+      }
+      .content-card {
+        border: 1px solid #ddd;
+      }
+    }
+    
+    /* Reduced motion */
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
   </style>
 </head>
 <body>
-  <header>
+  <header role="banner">
     <h1>INF 6420 – Project 2.2</h1>
     <p>The Impact of Artificial Intelligence on Web Accessibility</p>
   </header>
 
-  <div class="container">
-    <div class="bar">
-      <a href="../INF6420-index.html">&larr; Back to Course Home</a>
-      <a href="../index.html">Projects Index</a>
-    </div>
+  <main class="container">
+    <nav class="bar" aria-label="Breadcrumb navigation">
+      <a href="../INF6420-index.html" aria-label="Return to course homepage">&larr; Back to Course Home</a>
+      <a href="../index.html" aria-label="View projects index">Projects Index</a>
+    </nav>
 
-    <div class="content-card">
+    <article class="content-card">
       <h2>Project 2.2 - Research Paper</h2>
       <p>This project presents a research paper on the impact of Artificial Intelligence on Web Accessibility, featuring tables, styled lists, and proper HTML/CSS validation.</p>
-      <a href="rock-project2-2.html" class="project-link">View Full Project</a>
-    </div>
-  </div>
+      <a href="rock-project2-2.html" class="project-link" aria-label="View full research paper">View Full Project</a>
+    </article>
+  </main>
   
-  <footer>
+  <footer role="contentinfo">
     <p>&copy; 2025 Katie Rock | Wayne State University</p>
-    <p><a href="https://validator.w3.org/nu/?doc=" id="validate-html">Validate HTML</a> | <a href="https://jigsaw.w3.org/css-validator/validator?uri=" id="validate-css">Validate CSS</a></p>
+    <nav aria-label="Validation links">
+      <a href="https://validator.w3.org/nu/?doc=" id="validate-html" aria-label="Validate HTML markup">Validate HTML</a> | 
+      <a href="https://jigsaw.w3.org/css-validator/validator?uri=" id="validate-css" aria-label="Validate CSS styles">Validate CSS</a>
+    </nav>
   </footer>
   
   <script>

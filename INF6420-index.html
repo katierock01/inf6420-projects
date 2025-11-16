@@ -4,7 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Katie Rock – INF 6420 Course Projects</title>
-  <meta name="description" content="INF 6420 course homepage showcasing all projects by Katie Rock">
+  <meta name="description" content="INF 6420 Web Development course portfolio by Katie Rock, LLMSW. Explore projects demonstrating HTML, CSS, JavaScript, and PHP skills.">
+  <meta name="author" content="Katie Rock">
+  <meta name="keywords" content="web development, INF 6420, portfolio, HTML, CSS, JavaScript, PHP">
+  
+  <!-- Open Graph / Social Media Meta Tags -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Katie Rock – INF 6420 Course Projects">
+  <meta property="og:description" content="Web Development course portfolio showcasing HTML, CSS, JavaScript, and PHP projects">
+  <meta property="og:site_name" content="Katie Rock Portfolio">
+  
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <style>
     :root {
@@ -41,6 +50,30 @@
     
     a:hover {
       opacity: 0.8;
+    }
+    
+    a:focus {
+      outline: 3px solid var(--accent-color);
+      outline-offset: 2px;
+      border-radius: 4px;
+    }
+    
+    /* Skip to main content for accessibility */
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 0;
+      background: var(--primary-color);
+      color: white;
+      padding: 8px 16px;
+      text-decoration: none;
+      border-radius: 0 0 4px 0;
+      z-index: 100;
+    }
+    
+    .skip-link:focus {
+      top: 0;
+      outline: 3px solid var(--accent-color);
     }
     
     header {
@@ -148,6 +181,20 @@
       opacity: 1;
     }
     
+    .project-link:focus {
+      outline: 3px solid var(--primary-color);
+      outline-offset: 2px;
+    }
+    
+    /* Better button/interactive element focus states */
+    button:focus,
+    input:focus,
+    select:focus,
+    textarea:focus {
+      outline: 3px solid var(--accent-color);
+      outline-offset: 2px;
+    }
+    
     footer {
       font-size: 0.8em;
       font-style: italic;
@@ -177,72 +224,114 @@
         grid-template-columns: 1fr;
       }
     }
+    
+    /* Print styles for better printing */
+    @media print {
+      body {
+        background: white;
+        color: black;
+      }
+      
+      header, .video-container, footer {
+        background: white !important;
+        color: black !important;
+        box-shadow: none;
+      }
+      
+      .project-card {
+        border: 1px solid #ddd;
+        break-inside: avoid;
+      }
+      
+      a {
+        color: black;
+        text-decoration: underline;
+      }
+      
+      .skip-link {
+        display: none;
+      }
+    }
+    
+    /* Reduced motion for accessibility */
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
   </style>
 </head>
 <body>
-  <header>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  
+  <header role="banner">
     <h1>INF 6420 – Web Development</h1>
     <p>Course Projects by Katie Rock, LLMSW</p>
   </header>
   
-  <div class="container">
-    <div class="intro-section">
-      <h2>Welcome to My Course Portfolio</h2>
+  <main id="main-content" class="container">
+    <section class="intro-section" aria-labelledby="intro-heading">
+      <h2 id="intro-heading">Welcome to My Course Portfolio</h2>
       <p>This page serves as the central hub for all my INF 6420 projects. Each project demonstrates different web development skills and techniques learned throughout the course.</p>
-    </div>
+    </section>
     
-    <div class="video-container">
-      <h2>Self Introduction Video</h2>
+    <section class="video-container" aria-labelledby="video-heading">
+      <h2 id="video-heading">Self Introduction Video</h2>
       <div class="video-wrapper">
-        <video controls>
+        <video controls aria-label="Self introduction video by Katie Rock">
           <source src="self_intro.mp4" type="video/mp4">
-          Your browser does not support the video tag.
+          <p>Your browser does not support the video tag. Please use a modern browser to view this content.</p>
         </video>
-        <div class="video-note">
+        <div class="video-note" role="note">
           <strong>Note:</strong> If the video doesn't load, the file self_intro.mp4 may need to be added to the repository root.
         </div>
       </div>
-    </div>
+    </section>
     
-    <section>
-      <h2>Course Projects</h2>
-      <div class="projects-grid">
-        <div class="project-card">
+    <section aria-labelledby="projects-heading">
+      <h2 id="projects-heading">Course Projects</h2>
+      <div class="projects-grid" role="list">
+        <article class="project-card" role="listitem">
           <h3>Project 1.1</h3>
           <p>Personal introduction page with basic HTML/CSS skills.</p>
-          <a href="rock-Project1.1/rock-Project1.1.index.html" class="project-link">View Project</a>
-        </div>
+          <a href="rock-Project1.1/rock-Project1.1.index.html" class="project-link" aria-label="View Project 1.1 - Personal introduction page">View Project</a>
+        </article>
         
-        <div class="project-card">
+        <article class="project-card" role="listitem">
           <h3>Project 2.1</h3>
           <p>Advanced page design with documentation.</p>
-          <a href="rock-Project2.1/index.html" class="project-link">View Project</a>
-        </div>
+          <a href="rock-Project2.1/index.html" class="project-link" aria-label="View Project 2.1 - Advanced page design">View Project</a>
+        </article>
         
-        <div class="project-card">
+        <article class="project-card" role="listitem">
           <h3>Project 2.2</h3>
           <p>HTML conversion with internal CSS, tables, and styled lists.</p>
-          <a href="project2.2/index.html" class="project-link">View Project</a>
-        </div>
+          <a href="project2.2/index.html" class="project-link" aria-label="View Project 2.2 - HTML conversion with CSS">View Project</a>
+        </article>
         
-        <div class="project-card">
+        <article class="project-card" role="listitem">
           <h3>Project 2.3</h3>
           <p>Additional web development exercises.</p>
-          <a href="rock-Project2.3/index.html" class="project-link">View Project</a>
-        </div>
+          <a href="rock-Project2.3/index.html" class="project-link" aria-label="View Project 2.3 - Web development exercises">View Project</a>
+        </article>
         
-        <div class="project-card">
+        <article class="project-card" role="listitem">
           <h3>Project 3</h3>
           <p>Interactive website with forms and PHP backend.</p>
-          <a href="project3/home.html" class="project-link">View Project</a>
-        </div>
+          <a href="project3/home.html" class="project-link" aria-label="View Project 3 - Interactive website with PHP">View Project</a>
+        </article>
       </div>
     </section>
-  </div>
+  </main>
   
-  <footer>
+  <footer role="contentinfo">
     <p>&copy; 2025 Katie Rock | Wayne State University</p>
-    <p><a href="https://validator.w3.org/nu/?doc=" id="validate-html">Validate HTML</a> | <a href="https://jigsaw.w3.org/css-validator/validator?uri=" id="validate-css">Validate CSS</a></p>
+    <nav aria-label="Validation links">
+      <a href="https://validator.w3.org/nu/?doc=" id="validate-html" aria-label="Validate HTML markup">Validate HTML</a> | 
+      <a href="https://jigsaw.w3.org/css-validator/validator?uri=" id="validate-css" aria-label="Validate CSS styles">Validate CSS</a>
+    </nav>
   </footer>
   
   <script>
