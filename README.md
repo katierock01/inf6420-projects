@@ -5,13 +5,13 @@ Course site and sources for INF 6420 by Katie Rock. This repo mirrors your stude
 ## Live WSU URLs
 
 - Hub: http://141.217.120.86/fn9575/html/inf6420-projects/index.html
-- Project 2.2: http://141.217.120.86/fn9575/html/inf6420-projects/rock-Project2.2/rock-project2-2.html
-- Project 1.1 (links to 2.1 DOCX): http://141.217.120.86/fn9575/html/inf6420-projects/rock-Project1.1/rock-Project1.1.index.html
-- Direct Project 2.1 DOCX (optional): http://141.217.120.86/fn9575/html/inf6420-projects/rock-Project2.1/rock-project2.1.docx
+- Project 2.2: http://141.217.120.86/fn9575/html/inf6420-projects/project2.2/index.html
+- Project 1.1 (links to 2.1 DOCX): http://141.217.120.86/fn9575/html/inf6420-projects/project1.1/index.html
+- Direct Project 2.1 DOCX (optional): http://141.217.120.86/fn9575/html/inf6420-projects/project2.1/rock-project2.1.docx
 
 Validators (for 2.2):
-- HTML: https://validator.w3.org/nu/?doc=http%3A%2F%2F141.217.120.86%2Ffn9575%2Fhtml%2Finf6420-projects%2Frock-Project2.2%2Frock-project2-2.html
-- CSS:  https://jigsaw.w3.org/css-validator/validator?uri=http%3A%2F%2F141.217.120.86%2Ffn9575%2Fhtml%2Finf6420-projects%2Frock-Project2.2%2Frock-project2-2.html
+- HTML: https://validator.w3.org/nu/?doc=http%3A%2F%2F141.217.120.86%2Ffn9575%2Fhtml%2Finf6420-projects%2Fproject2.2%2Findex.html
+- CSS:  https://jigsaw.w3.org/css-validator/validator?uri=http%3A%2F%2F141.217.120.86%2Ffn9575%2Fhtml%2Finf6420-projects%2Fproject2.2%2Findex.html
 
 The Project 2.2 page also includes dynamic validator links that adapt to whatever URL you open.
 
@@ -21,9 +21,10 @@ The Project 2.2 page also includes dynamic validator links that adapt to whateve
 - `submission.html` – Grader-friendly links and validators
 - `docs/` – Assignment docs hub and helper text
 - `images/`, `styles/` – Shared assets
-- `rock-Project1.1/` – Project 1.1 page (links to 2.1 DOCX and 2.2)
-- `rock-Project2.1/` – Landing + embedded doc scaffold; keep the DOCX outside of Git
-- `rock-Project2.2/` – Final 2.2 HTML with internal CSS
+- `project1.1/` – Project 1.1 page (links to 2.1 DOCX and 2.2)
+- `project2.1/` – Landing + embedded doc scaffold; keep the DOCX outside of Git
+- `project2.2/` – Final 2.2 HTML with internal CSS
+- `project3/` – Squirrels of Michigan website
 - `rock-Project2.3/` – Placeholder to avoid 404s
 - `scripts/` – Deployment and packaging helpers
 
