@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Oval Frame Comparison — EmpathTech</title>
+  <style>
+    :root{
+      --coral-600: #FF6B63;
+      --blue-900: #083B55;
+      --neutral-100: #F1F4F8;
+      --chrome-500: #C0C0C0;
+    }
+
+    body{
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      margin: 24px;
+      background: linear-gradient(180deg, #ffffff 0%, #F8FBFF 100%);
+      color: #1B2430;
+    }
+
+    h1 { font-size: 1.15rem; margin-bottom: 12px; }
+    p.lead { margin-top: 0; margin-bottom: 18px; color:#414B5C; font-size:0.95rem; }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      align-items: start;
+    }
+
+    .example {
+      background: white;
+      border-radius: 12px;
+      padding: 14px;
+      box-shadow: 0 8px 20px rgba(11,22,34,0.06);
+      text-align: center;
+    }
+
+    .label { font-weight: 600; margin: 10px 0 8px; color: #083B55; font-size:0.95rem; }
+
+    /* base oval container */
+    .oval {
+      width: 100%;
+      max-width: 280px;
+      aspect-ratio: 3 / 4;
+      border-radius: 9999px;
+      overflow: hidden;
+      margin: 0 auto;
+      display: block;
+      background: var(--neutral-100);
+    }
+
+    .oval img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 50% 36%;
+      display: block;
+    }
+
+    /* Variant 1: coral thin border */
+    .v-coral { border: 6px solid var(--coral-600); box-shadow: 0 10px 30px rgba(255,107,99,0.08); }
+
+    /* Variant 2: deep-blue thin border with subtle inner chrome */
+    .v-blue {
+      border: 5px solid var(--blue-900);
+      box-shadow: 0 14px 30px rgba(8,59,85,0.06);
+      position: relative;
+    }
+    .v-blue::after {
+      content: "";
+      position: absolute;
+      inset: 6px;
+      border-radius: 9999px;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.06);
+      pointer-events: none;
+    }
+
+    /* Variant 3: no border, strong shadow for editorial look */
+    .v-shadow { border: 0; box-shadow: 0 20px 40px rgba(11,22,34,0.12); }
+
+    /* Variant 4: double rim (chrome + coral) with thin gap */
+    .v-double {
+      padding: 6px;
+      background: linear-gradient(180deg, rgba(255,107,99,0.95), rgba(255,107,99,0.95));
+      border-radius: 9999px;
+      box-shadow: 0 8px 24px rgba(11,22,34,0.08);
+    }
+    .v-double .inner {
+      width: 100%;
+      height: 100%;
+      border-radius: 9999px;
+      overflow: hidden;
+      border: 4px solid var(--chrome-500);
+      background: white;
+    }
+
+    /* small caption */
+    .caption { font-size: 0.86rem; color: #414B5C; margin-top: 8px; }
+
+    /* responsive tweaks */
+    @media (max-width:600px){
+      .oval { max-width: 220px; }
+    }
+
+    footer { margin-top: 28px; color:#69727A; font-size:0.9rem; }
+    a.sample-link { color: var(--blue-900); text-decoration: none; font-weight:600; }
+  </style>
+</head>
+<body>
+  <h1>Oval Frame Comparison</h1>
+  <p class="lead">Four completed oval-frame styles using the supplied image. To view locally, place your image named <strong>photo.jpg</strong> in the same folder as this HTML file and open it in a browser.</p>
+
+  <div class="grid">
+    <div class="example">
+      <div class="label">Coral Accent — Friendly / Emphatic</div>
+      <div class="oval v-coral" aria-hidden="true">
+        <img src="photo.jpg" alt="Person wearing orange blazer, shoulders to mid-chest">
+      </div>
+      <div class="caption">Warm, brand-forward accent for profile cards and marketing.</div>
+    </div>
+
+    <div class="example">
+      <div class="label">Deep Blue — Formal / High-Contrast</div>
+      <div class="oval v-blue" aria-hidden="true">
+        <img src="photo.jpg" alt="Person wearing orange blazer, shoulders to mid-chest">
+      </div>
+      <div class="caption">Institutional and formal contexts — high contrast with the blazer.</div>
+    </div>
+
+    <div class="example">
+      <div class="label">Editorial Shadow — Clean / Photo-Forward</div>
+      <div class="oval v-shadow" aria-hidden="true">
+        <img src="photo.jpg" alt="Person wearing orange blazer, shoulders to mid-chest">
+      </div>
+      <div class="caption">No border — photography is the focus; works well on lighter backgrounds.</div>
+    </div>
+
+    <div class="example">
+      <div class="label">Double Rim — Polished / Decorative</div>
+      <div class="oval v-double" aria-hidden="true">
+        <div class="inner">
+          <img src="photo.jpg" alt="Person wearing orange blazer, shoulders to mid-chest">
+        </div>
+      </div>
+      <div class="caption">Coral outer rim + chrome inner ring for a refined branded badge.</div>
+    </div>
+  </div>
+
+  <footer>
+    Export recommendation: sRGB JPEG (quality 80–90), long side ≈1200px. For large displays provide a 2x variant (≈2400px).
+  </footer>
+</body>
+</html>
