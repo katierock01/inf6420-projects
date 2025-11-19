@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Double Rim — Oval Frame Export — EmpathTech</title>
+  <style>
+    :root{
+      --coral-600: #FF6B63;
+      --chrome-500: #C0C0C0;
+      --blue-900: #083B55;
+      --neutral-100: #F1F4F8;
+    }
+    body{ font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial; margin: 28px; background: linear-gradient(180deg,#FFFFFF,#F8FBFF); color: #1B2430; }
+    .card{ max-width:760px; margin:0 auto; background:white; padding:20px 22px; border-radius:12px; box-shadow:0 14px 40px rgba(11,22,34,0.06);}
+    h1{ font-size:1.1rem; margin:0 0 8px; color:var(--blue-900);}
+    p.lead{ margin:0 0 16px; color:#414B5C; }
+    .preview{ display:flex; gap:22px; align-items:center; flex-wrap:wrap; }
+    .double-rim{ width:320px; aspect-ratio:3/4; padding:8px; border-radius:9999px; background:linear-gradient(180deg, var(--coral-600), var(--coral-600)); box-shadow:0 12px 30px rgba(11,22,34,0.08); }
+    .double-rim .inner{ width:100%; height:100%; border-radius:9999px; overflow:hidden; background:white; border:6px solid var(--chrome-500); }
+    .double-rim img{ width:100%; height:100%; object-fit:cover; object-position:50% 36%; display:block; }
+    .notes{ flex:1 1 340px; }
+    .specs{ margin-top:12px; background:#FAFCFE; border:1px solid #EEF6FB; padding:10px; border-radius:8px; color:#414B5C; font-size:0.95rem; }
+    .buttons{ margin-top:12px; display:flex; gap:10px; flex-wrap:wrap; }
+    .btn{ display:inline-block; padding:8px 12px; border-radius:8px; text-decoration:none; color:white; font-weight:600; background:var(--blue-900); }
+    .btn.secondary{ background:var(--coral-600); }
+    footer{ margin-top:18px; color:#69727A; font-size:0.9rem; }
+    @media (max-width:720px){ .double-rim{ width:220px; } }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Double Rim — Polished Badge</h1>
+    <p class="lead">This page showcases the double-rim treatment (coral outer rim + chrome inner ring). Place your image named <strong>photo.jpg</strong> in this folder to preview.</p>
+    <div class="preview">
+      <div class="double-rim">
+        <div class="inner">
+          <img src="photo.jpg" alt="Person wearing orange blazer, shoulders to mid-chest">
+        </div>
+      </div>
+      <div class="notes">
+        <div class="specs">
+          <strong>Export specs</strong>
+          <ul style="margin:8px 0 0 18px; padding:0;">
+            <li>sRGB JPEG, quality 80–90</li>
+            <li>Long side: 1200px (provide 2400px for 2x)</li>
+            <li>Crop ratio: 3:4 (portrait) centered on shoulders/lapel</li>
+            <li>Filename: photo.jpg (replace in repo folder or update &lt;img src&gt;)</li>
+          </ul>
+        </div>
+        <div class="buttons">
+          <a class="btn" href="oval-frames/oval-frame-comparison.html">Back to all styles</a>
+          <a class="btn secondary" href="oval-frames/linkedin-profile-variant.html">Preview on profile card</a>
+        </div>
+      </div>
+    </div>
+    <footer>Tip: To publish publicly without VPN, enable GitHub Pages for this repository or use Netlify Drop with the oval-frames folder.</footer>
+  </div>
+</body>
+</html>
