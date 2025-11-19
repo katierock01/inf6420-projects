@@ -11,8 +11,8 @@ html, body {
 body {
 	font-family: 'Open Sans', Arial, sans-serif;
 	font-size: 7px; /* Smaller body text per request */
-	background: #f1f4f8; /* EmpathTech background */
-	color: #111827;
+	background: #E8F2F7; /* EmpathTech background */
+	color: #414B5C;
 	line-height: 1.62; /* maintain readability */
 }
 
@@ -26,7 +26,7 @@ body {
 }
 
 #header {
-	background: #3755be; /* EmpathTech primary color */
+	background: #083B55; /* EmpathTech primary color */
 	color: #ffffff;
 	padding: 15px 20px;
 }
@@ -34,15 +34,15 @@ body {
 #navigation {
 	float: left;
 	width: 22%;
-	background: #e8ecff; /* light primary tint */
+	background: #E8F2F7; /* light primary tint */
 	padding: 10px;
 	min-height: 300px;
 	text-align: center; /* Center navigation links for symmetry */
 }
 #navigation ul { list-style: none; margin: 0; padding: 0; }
 #navigation li { margin: 22px 0; } /* More spacing between menu items */
-#navigation a { color: #3755be; text-decoration: none; font-weight: 600; }
-#navigation a:hover { text-decoration: underline; color: #ee7752; }
+#navigation a { color: #083B55; text-decoration: none; font-weight: 600; }
+#navigation a:hover { text-decoration: underline; color: #FF6B63; }
 
 #maincontent {
 	float: left;
@@ -55,7 +55,7 @@ body {
 
 #footer {
 	clear: both;
-	background: #2a4299;
+	background: #0D5A7F;
 	color: #ffffff;
 	padding: 12px 20px;
 	font-style: italic; /* footer in italics */
@@ -75,8 +75,8 @@ body {
 
 /* Typography */
 h1 { font-family: 'Montserrat', Arial, sans-serif; font-size: 2.0em; margin: 0.4em 0; text-align: center; color: #ffffff; }
-h2 { font-family: 'Montserrat', Arial, sans-serif; font-size: 1.6em; margin: 0.5em 0; text-align: center; color: #3755be; }
-h3 { font-family: 'Montserrat', Arial, sans-serif; font-size: 1.3em; margin: 0.5em 0; text-align: center; color: #3755be; }
+h2 { font-family: 'Montserrat', Arial, sans-serif; font-size: 1.6em; margin: 0.5em 0; text-align: center; color: #083B55; }
+h3 { font-family: 'Montserrat', Arial, sans-serif; font-size: 1.3em; margin: 0.5em 0; text-align: center; color: #083B55; }
 p { margin: 0.8em 0; font-size: 0.9em; }
 
 /* Images inside main content if any */
