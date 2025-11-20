@@ -98,7 +98,8 @@
         }
         input[type="radio"], input[type="checkbox"] { margin-right: 4px; }
         .radio-group, .checkbox-group { margin: 8px 0; }
-        input[type="submit"] { background: #006633; color: white; padding: 5px 10px; border: none; border-radius: 4px; cursor: pointer; font-size: 0.9em; margin-top: 6px; }
+        input[type="submit"] { background: #FF6B63; color: white; padding: 5px 10px; border: none; border-radius: 4px; cursor: pointer; font-size: 0.9em; margin-top: 6px; }
+        input[type="submit"]:hover { background: #FF5048; }
 
         /* Small-screen tweaks */
         @media (max-width: 520px) {
@@ -192,8 +193,14 @@
     <footer>
     <p>&copy; 2025 Katie Rock, LLMSW | Wayne State University</p>
     <p>
-        <a href="https://validator.w3.org/nu/?doc=http://141.217.120.86/fn9575/html/rock-INF6420-index.html" target="_blank" rel="noopener" style="color: #006633; text-decoration: none; font-weight: 600;">Validate HTML</a>
+        <a href="#" onclick="validateHTML(); return false;" style="color: #FF6B63; text-decoration: none; font-weight: 600;">Validate HTML</a>
     </p>
+    <script>
+    function validateHTML() {
+        var currentURL = encodeURIComponent(window.location.href);
+        window.open('https://validator.w3.org/nu/?doc=' + currentURL, '_blank', 'noopener');
+    }
+    </script>
     </footer>
 </body>
 </html>
