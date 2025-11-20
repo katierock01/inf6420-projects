@@ -4,6 +4,8 @@
 
 Course site and sources for INF 6420 by Katie Rock. This repository serves as the central hub for all course projects, assignments, and web development work. This repo mirrors your student web space (WSU) but does not replace it. WSU URLs remain the source of truth for grading.
 
+📖 **Quick Links**: [Quick Start Guide](QUICKSTART.md) | [Detailed Setup Instructions](GITHUB_PROJECT_SETUP.md)
+
 ## Course Overview
 
 INF 6420 focuses on modern web development, scripting, and best practices for creating accessible, standards-compliant websites. This repository contains:
