@@ -1,46 +1,52 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html lang="en">
 <head>
+	<meta charset="utf-8">
 	<title>Processing Form Data</title>
-<style type="text/css">
-code {color:#F00C4D;font-weight:bold;font-size:1.2em}
-i {color: #6D0CF0}
-th, td {padding:.1em;border:1px solid blue;text-align:left}
-p {font-size:.9em;font-style:italic}
-</style>
+	<style>
+		body {font-family: "Open Sans", Arial, sans-serif; background: #E8F2F7; color: #083B55; margin: 0; padding: 24px;}
+		h1 {margin-top: 0;}
+		table {width: 100%; border-collapse: collapse; margin-top: 16px; background: #fff;}
+		th, td {padding: 0.6em 0.8em; border: 1px solid #0D5A7F; text-align: left; vertical-align: top;}
+		th {background: #083B55; color: #fff; text-transform: uppercase; font-size: 0.9em; letter-spacing: 0.05em;}
+		code {color: #FF6B63; font-weight: 600; font-size: 1em;}
+		ul {list-style: disc; padding-left: 1.5em; margin: 0;}
+		.message {background: #fff; border: 1px solid #0D5A7F; padding: 16px; border-radius: 6px;}
+	</style>
 </head>
 <body>
-<p>This is a very simple PHP script that outputs the name of each bit of information (that corresponds to the <code>name</code> attribute for that field) along with the value that was sent with it right in the browser window.</p>
-<p>In a more useful script, you might store this information in a MySQL database, or send it to your email address.</p>
-<table>
-<tr><th>Field Name</th><th>Value(s)</th></tr>
+	<h1>Submitted Form Data</h1>
+	<p>This helper page lists each submitted field name alongside the value that was sent with it. Use this to confirm your form is sending the expected data.</p>
 
-<?php
-if (empty($_POST)) {
-	print "<p>No data was submitted.</p>";
-} else {
+	<?php
+	$payload = $_POST ?: $_GET;
 
-foreach ($_POST as $key => $value) {
-	if (get_magic_quotes_gpc()) $value=stripslashes($value);
-	if ($key=='extras') {
-		
-	if (is_array($_POST['extras']) ){
-		print "<tr><td><code>$key</code></td><td>";
-		foreach ($_POST['extras'] as $value) {
-				print "<i>$value</i><br />";
-				}
-				print "</td></tr>";
-		} else {
-		print "<tr><td><code>$key</code></td><td><i>$value</i></td></tr>\n";
-		}
+	if (empty($payload)) {
+		echo '<div class="message"><strong>No data was submitted.</strong> Please return to the form and try again.</div>';
 	} else {
+		echo '<table>';
+		echo '<thead><tr><th>Field Name</th><th>Value(s)</th></tr></thead>';
+		echo '<tbody>';
 
-	print "<tr><td><code>$key</code></td><td><i>$value</i></td></tr>\n";
+		foreach ($payload as $key => $value) {
+			$safeKey = htmlspecialchars((string) $key, ENT_QUOTES, 'UTF-8');
+
+			if (is_array($value)) {
+				echo '<tr><td><code>' . $safeKey . '</code></td><td><ul>';
+				foreach ($value as $item) {
+					$safeItem = htmlspecialchars((string) $item, ENT_QUOTES, 'UTF-8');
+					echo '<li>' . $safeItem . '</li>';
+				}
+				echo '</ul></td></tr>';
+				continue;
+			}
+
+			$safeValue = htmlspecialchars((string) $value, ENT_QUOTES, 'UTF-8');
+			echo '<tr><td><code>' . $safeKey . '</code></td><td>' . $safeValue . '</td></tr>';
+		}
+
+		echo '</tbody></table>';
 	}
-}
-}
-?>
-</table>
+	?>
 </body>
 </html>
