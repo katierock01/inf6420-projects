@@ -67,12 +67,29 @@
     </nav>
 
     <main>
-        <h3>About Me</h3>
-        <p>Hello! My name is <strong>Katie Rock</strong>, and I’m a graduate student in the 
-        <em>Information Sciences program at Wayne State University</em>. This page was built 
-        as part of Project 1 to demonstrate basic web publishing skills.</p>
+        <!-- Image positioned at top as required -->
+        <img src="../rock-Project2.1/docs/myphoto.jpeg" alt="Photo of Katie Rock" onerror="this.src='https://via.placeholder.com/250x250?text=Photo+Not+Found'">
 
-        <h3>Project Links</h3>
+        <h3>About Me</h3>
+        <p>Hello! My name is <strong>Katie Rock</strong>, and I'm a graduate student in the 
+        <em>Information Sciences program at Wayne State University</em>.</p>
+
+        <h3>Purpose of Taking This Class</h3>
+        <p>I am taking INF 6420 to strengthen my web development skills and learn how to create accessible, 
+        professional websites. This course will help me build technical competencies essential for modern 
+        information professionals. For more information about the program, visit the 
+        <a href="https://wayne.edu/sis" target="_blank" rel="noopener" style="color:#083B55; font-weight:600;">Wayne State University School of Information Sciences</a>.</p>
+
+        <h3>Course Projects</h3>
+        <ul style="line-height:2;">
+            <li><a href="../rock-Project2.1/rock-project2.1.docx" style="color:#083B55;">Project 2.1 – Research Paper (DOCX)</a></li>
+            <li><a href="../project2.2/rock-project2-2.html" style="color:#083B55;">Project 2.2 – HTML Conversion with Internal CSS</a></li>
+            <li><a href="../project3/home.html" style="color:#083B55;">Project 3 – Multi-Page Interactive Website</a></li>
+            <li>Project 4 – (Coming soon)</li>
+            <li>Project 5 – Final Project (Coming soon)</li>
+        </ul>
+
+        <h3>Additional Information</h3>
         <p>
             <!-- Per Project 2.1 rubric: Project 1 must link to the Project 2.1 Word document -->
             <a href="../rock-Project2.1/rock-project2.1.docx"
@@ -92,17 +109,31 @@
         <p style="font-size:0.9em; color:#555; margin-top:-10px;">Last updated: October 23, 2025</p>
 
         <h3>Interests</h3>
-        <p>I’m passionate about combining <strong>information management, social impact, and technology</strong>. 
+        <p>I'm passionate about combining <strong>information management, social impact, and technology</strong>. 
         In particular, I explore how data and AI can be used to drive innovation, advocacy, and social change.</p>
 
-        <!-- Your image -->
-        <img src="../rock-Project2.1/docs/myphoto.jpeg" alt="Photo of Katie Rock" onerror="this.src='https://via.placeholder.com/250x250?text=Photo+Not+Found'">        <h3>Closing</h3>
+        <h3>Closing</h3>
         <p>Thank you for visiting my page! This is just the beginning of my journey in building 
         professional web skills and applying them in meaningful, real-world contexts.</p>
     </main>
 
     <footer>
         <p>&copy; 2025 Katie Rock | Wayne State University</p>
+        <p style="margin-top:10px;">
+            <a href="https://validator.w3.org/nu/?doc=" id="validate-html" target="_blank" rel="noopener" 
+               style="color:#083B55; text-decoration:none; font-weight:600;">Validate HTML5</a>
+        </p>
     </footer>
+
+    <script>
+        // Dynamic validator link
+        (function(){
+            try {
+                const url = window.location.href;
+                const html = document.getElementById('validate-html');
+                if (html) html.href = 'https://validator.w3.org/nu/?doc=' + encodeURIComponent(url);
+            } catch (e) { /* noop */ }
+        })();
+    </script>
 </body>
 </html>
