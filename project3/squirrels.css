@@ -9,57 +9,57 @@ html, body {
 }
 
 body {
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 7px; /* Smaller body text per request */
-	background: #e2e8f0; /* non-white background as required */
-	color: #111827;
-	line-height: 1.62; /* maintain readability */
+	font-family: 'Open Sans', Arial, sans-serif;
+	font-size: 18px; /* Increased from 16px for better readability at 100% */
+	background: #E8F2F7; /* EmpathTech background */
+	color: #414B5C;
+	line-height: 1.6; /* maintain readability */
 }
 
 /* Layout */
 #wrapper {
 	width: 90%;
-	max-width: 900px;
-	margin: 10px auto;
-	background: #f1f5f9; /* wrapper is not white */
+	max-width: 1000px; /* Increased from 900px */
+	margin: 20px auto; /* More margin */
+	background: #f9fafb; /* wrapper is not white */
 	box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
 #header {
-	background: #006633; /* Wayne State green tone */
+	background: #083B55; /* EmpathTech primary color */
 	color: #ffffff;
-	padding: 15px 20px;
+	padding: 20px 25px; /* Increased padding */
 }
 
 #navigation {
 	float: left;
 	width: 22%;
-	background: #cbd5e1; /* non-white */
-	padding: 10px;
-	min-height: 300px;
+	background: #E8F2F7; /* light primary tint */
+	padding: 15px; /* Increased from 10px */
+	min-height: 400px; /* Increased from 300px */
 	text-align: center; /* Center navigation links for symmetry */
 }
 #navigation ul { list-style: none; margin: 0; padding: 0; }
-#navigation li { margin: 22px 0; } /* More spacing between menu items */
-#navigation a { color: #006633; text-decoration: none; font-weight: 600; }
-#navigation a:hover { text-decoration: underline; }
+#navigation li { margin: 25px 0; font-size: 1.05em; } /* Increased spacing and size */
+#navigation a { color: #083B55; text-decoration: none; font-weight: 600; }
+#navigation a:hover { text-decoration: underline; color: #FF6B63; }
 
 #maincontent {
 	float: left;
 	width: 73%;
 	margin-left: 5%; /* nudge main text farther from nav */
 	background: #ffffff; /* the ONLY white section */
-	padding: 15px 20px;
-	min-height: 300px;
+	padding: 20px 25px; /* Increased from 15px 20px */
+	min-height: 400px; /* Increased from 300px */
 }
 
 #footer {
 	clear: both;
-	background: #004d26;
+	background: #0D5A7F;
 	color: #ffffff;
-	padding: 12px 20px;
+	padding: 15px 25px; /* Increased padding */
 	font-style: italic; /* footer in italics */
-	font-size: 0.9em;
+	font-size: 0.95em; /* Slightly larger */
 	text-align: center;
 }
 
@@ -74,13 +74,13 @@ body {
 }
 
 /* Typography */
-h1 { font-family: Georgia, "Times New Roman", serif; font-size: 2.0em; margin: 0.4em 0; text-align: center; }
-h2 { font-family: Georgia, "Times New Roman", serif; font-size: 1.6em; margin: 0.5em 0; text-align: center; }
-h3 { font-family: Georgia, "Times New Roman", serif; font-size: 1.3em; margin: 0.5em 0; text-align: center; }
-p { margin: 0.8em 0; font-size: 0.9em; }
+h1 { font-family: Georgia, 'Times New Roman', serif; font-size: 2.4em; margin: 0.4em 0; text-align: center; color: #ffffff; } /* Serif font, larger */
+h2 { font-family: Georgia, 'Times New Roman', serif; font-size: 1.9em; margin: 0.5em 0; text-align: center; color: #083B55; } /* Serif font, larger */
+h3 { font-family: Georgia, 'Times New Roman', serif; font-size: 1.5em; margin: 0.5em 0; text-align: center; color: #083B55; } /* Serif font, larger */
+p { margin: 1em 0; font-size: 1em; line-height: 1.7; } /* Better spacing and line height */
 
 /* Images inside main content if any */
 /* Constrain images so they don't dominate the layout */
-#maincontent img { max-width: 65%; height: auto; display: block; margin: 8px auto; }
+#maincontent img { max-width: 70%; height: auto; display: block; margin: 12px auto; } /* Slightly larger */
 /* Make the very first image on the page much smaller */
-#maincontent img:first-of-type { max-width: 40%; }
+#maincontent img:first-of-type { max-width: 45%; }
