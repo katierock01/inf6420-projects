@@ -1,0 +1,267 @@
+/* Responsive CSS for Project 4 - Desktop and Mobile Design */
+
+/* Base typography */
+html, body {
+	margin: 0;
+	padding: 0;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+/* DEFAULT DESKTOP STYLES (from Project 3) */
+body {
+	font-family: 'Open Sans', Arial, sans-serif;
+	font-size: 18px;
+	background: #E8F2F7;
+	color: #414B5C;
+	line-height: 1.6;
+}
+
+/* Layout */
+#wrapper {
+	width: 90%;
+	max-width: 1000px;
+	margin: 20px auto;
+	background: #f9fafb;
+	box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+#header {
+	background: #083B55;
+	color: #ffffff;
+	padding: 20px 25px;
+}
+
+#navigation {
+	float: left;
+	width: 22%;
+	background: #E8F2F7;
+	padding: 15px;
+	min-height: 400px;
+	text-align: center;
+}
+
+#navigation ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+#navigation li {
+	margin: 25px 0;
+	font-size: 1.05em;
+}
+
+#navigation a {
+	color: #083B55;
+	text-decoration: none;
+	font-weight: 600;
+}
+
+#navigation a:hover {
+	text-decoration: underline;
+	color: #FF6B63;
+}
+
+#maincontent {
+	float: left;
+	width: 73%;
+	margin-left: 5%;
+	background: #ffffff;
+	padding: 20px 25px;
+	min-height: 400px;
+}
+
+#footer {
+	clear: both;
+	background: #0D5A7F;
+	color: #ffffff;
+	padding: 15px 25px;
+	font-style: italic;
+	font-size: 0.95em;
+	text-align: center;
+}
+
+#footer a {
+	color: #ffffff;
+	text-decoration: none;
+	font-weight: 600;
+}
+
+#footer a:hover {
+	text-decoration: underline;
+}
+
+/* Typography */
+h1 {
+	font-family: Georgia, 'Times New Roman', serif;
+	font-size: 2.4em;
+	margin: 0.4em 0;
+	text-align: center;
+	color: #ffffff;
+}
+
+h2 {
+	font-family: Georgia, 'Times New Roman', serif;
+	font-size: 1.9em;
+	margin: 0.5em 0;
+	text-align: center;
+	color: #083B55;
+}
+
+h3 {
+	font-family: Georgia, 'Times New Roman', serif;
+	font-size: 1.5em;
+	margin: 0.5em 0;
+	text-align: center;
+	color: #083B55;
+}
+
+p {
+	margin: 1em 0;
+	font-size: 1em;
+	line-height: 1.7;
+}
+
+/* Images */
+#maincontent img {
+	max-width: 70%;
+	height: auto;
+	display: block;
+	margin: 12px auto;
+}
+
+#maincontent img:first-of-type {
+	max-width: 45%;
+}
+
+/* MOBILE STYLES - Smartphones (320x480) */
+@media only screen and (max-width: 480px) {
+	body {
+		font-size: 14px; /* Smaller base font for mobile */
+	}
+
+	#wrapper {
+		width: 100%;
+		margin: 0;
+		box-shadow: none;
+	}
+
+	#header {
+		padding: 15px 10px;
+	}
+
+	h1 {
+		font-size: 1.8em; /* Smaller heading for mobile */
+		margin: 0.3em 0;
+	}
+
+	h2 {
+		font-size: 1.5em;
+		margin: 0.4em 0;
+	}
+
+	h3 {
+		font-size: 1.2em;
+		margin: 0.4em 0;
+	}
+
+	/* Single column layout for mobile */
+	#navigation {
+		float: none;
+		width: 100%;
+		min-height: auto;
+		padding: 10px;
+		background: #E8F2F7;
+	}
+
+	#navigation ul {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+
+	#navigation li {
+		margin: 8px 5px;
+		font-size: 0.9em;
+	}
+
+	#maincontent {
+		float: none;
+		width: 100%;
+		margin-left: 0;
+		padding: 15px 10px;
+	}
+
+	#footer {
+		padding: 12px 10px;
+		font-size: 0.85em; /* Smaller footer text for mobile */
+	}
+
+	#footer p {
+		margin: 8px 0;
+	}
+
+	/* Adjust paragraph text */
+	p {
+		font-size: 1em;
+		line-height: 1.6;
+	}
+
+	/* Responsive images for mobile */
+	#maincontent img {
+		max-width: 90%;
+	}
+
+	#maincontent img:first-of-type {
+		max-width: 80%;
+	}
+}
+
+/* TABLET STYLES (optional - for medium devices 481px-768px) */
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+	body {
+		font-size: 16px;
+	}
+
+	#wrapper {
+		width: 95%;
+	}
+
+	#navigation {
+		width: 25%;
+		padding: 12px;
+	}
+
+	#navigation li {
+		margin: 20px 0;
+		font-size: 1em;
+	}
+
+	#maincontent {
+		width: 70%;
+		padding: 18px 20px;
+	}
+
+	h1 {
+		font-size: 2.2em;
+	}
+
+	h2 {
+		font-size: 1.7em;
+	}
+
+	h3 {
+		font-size: 1.4em;
+	}
+
+	#maincontent img {
+		max-width: 75%;
+	}
+
+	#maincontent img:first-of-type {
+		max-width: 50%;
+	}
+}
