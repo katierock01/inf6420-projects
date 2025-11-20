@@ -18,14 +18,15 @@
         .profile-photo {
             display: block;
             margin: 10px auto 8px auto;
-            border-radius: 8px;
+            border-radius: 50%; /* Oval/circular frame */
             max-width: 100px;
-            width: 100%;
-            height: auto;
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
             box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-            border: 2px solid #e0e0e0;
+            border: 3px solid #083B55;
             background: #fff;
-            padding: 5px;
+            padding: 3px;
         }
         main {
             width: 94%;
@@ -37,7 +38,7 @@
             box-shadow: 0 2px 10px rgba(0,0,0,0.06);
         }
         h1, h2, h3 {
-            color: #006633;
+            color: #083B55;
             font-family: Arial, Helvetica, sans-serif;
         }
         h1 {
@@ -56,7 +57,7 @@
             font-size: 1em;
         }
         header {
-            background: #006633;
+            background: #083B55;
             color: #ffffff;
             padding: 10px;
             text-align: center;
@@ -77,11 +78,11 @@
         /* Form Styles */
     .projects-section { background: #f8f9fa; padding: 10px; border-radius: 6px; margin-top: 14px; }
         .projects-section h3 { margin-top: 0; }
-    .project-link { display: inline-block; background: #006633; color: white; padding: 6px 10px; text-decoration: none; border-radius: 4px; margin: 6px 8px 6px 0; transition: background 0.3s; font-size: 0.9em; }
-        .project-link:hover { background: #004d26; }
-    .feedback-form { background: #f0fdf4; padding: 10px; border-radius: 6px; margin-top: 14px; }
-    fieldset { border: 1px solid #006633; border-radius: 6px; padding: 10px; margin: 10px 0; background: white; }
-    legend { color: #006633; font-weight: bold; padding: 0 8px; font-size: 0.85em; }
+    .project-link { display: inline-block; background: #083B55; color: white; padding: 6px 10px; text-decoration: none; border-radius: 4px; margin: 6px 8px 6px 0; transition: background 0.3s; font-size: 0.9em; }
+        .project-link:hover { background: #0D5A7F; }
+    .feedback-form { background: #E8F2F7; padding: 10px; border-radius: 6px; margin-top: 14px; }
+    fieldset { border: 1px solid #083B55; border-radius: 6px; padding: 10px; margin: 10px 0; background: white; }
+    legend { color: #083B55; font-weight: bold; padding: 0 8px; font-size: 0.85em; }
     label { display: block; margin: 6px 0 3px; font-weight: 500; font-size: 0.88em; }
         input[type="text"], input[type="email"], select, textarea {
             width: 100%;
@@ -98,7 +99,8 @@
         }
         input[type="radio"], input[type="checkbox"] { margin-right: 4px; }
         .radio-group, .checkbox-group { margin: 8px 0; }
-        input[type="submit"] { background: #006633; color: white; padding: 5px 10px; border: none; border-radius: 4px; cursor: pointer; font-size: 0.9em; margin-top: 6px; }
+        input[type="submit"] { background: #FF6B63; color: white; padding: 5px 10px; border: none; border-radius: 4px; cursor: pointer; font-size: 0.9em; margin-top: 6px; }
+        input[type="submit"]:hover { background: #FF5048; }
 
         /* Small-screen tweaks */
         @media (max-width: 520px) {
@@ -106,7 +108,7 @@
             main { max-width: 92%; padding: 10px; }
             header { padding: 8px; }
         }
-        input[type="submit"]:hover { background: #004d26; }
+        input[type="submit"]:hover { background: #FF5048; }
     </style>
 </head>
 <body>
@@ -116,7 +118,7 @@
     </header>
     <main>
         <!-- Your image -->
-        <img src="img/myphoto.jpeg" alt="Photo of Katie Rock" class="profile-photo">
+        <img src="myphoto.jpeg" alt="Photo of Katie Rock" class="profile-photo" onerror="this.src='https://via.placeholder.com/100x100?text=Photo'">
         <h3>About Me</h3>
         <p>Hello! My name is <strong>Katie Rock</strong>, and I'm a graduate student in the <em>Information Sciences program at Wayne State University</em>. This page was built as part of Project 1 to demonstrate basic web publishing skills. Learn more about the program at the <a href="https://wayne.edu/sis" target="_blank" rel="noopener">School of Information Sciences</a>.</p>
         <h3>Interests</h3>
@@ -125,15 +127,17 @@
         <div class="projects-section">
             <h3>My Projects</h3>
             <p>Explore my course projects:</p>
-            <a href="inf6420-projects/rock-Project1.1/rock-Project1.1.index.html" class="project-link" target="_blank">Project 2.1: Personal Page</a>
-            <a href="inf6420-projects/rock-Project2.2/rock-project2-2.html" class="project-link" target="_blank">Project 2.2: HTML Conversion</a>
-            <a href="inf6420-projects/project3/home.html" class="project-link" target="_blank">Project 3: Squirrels Website</a>
+            <a href="rock-project2.1.docx" class="project-link">Project 2.1 - AI & Web Accessibility Research</a>
+            <a href="project2.2/rock-project2-2.html" class="project-link">Project 2.2 - HTML/CSS Conversion</a>
+            <a href="project3/index.html" class="project-link">Project 3 - Squirrels Website</a>
+            <a href="#" class="project-link">Project 4 (Coming soon)</a>
+            <a href="#" class="project-link">Project 5 - Final (Coming soon)</a>
         </div>
         <!-- Feedback Form -->
         <div class="feedback-form">
             <h3>Visitor Feedback</h3>
             <p>Please share your feedback about this course page!</p>
-            <form action="showform.php" method="post">
+            <form action="project3/showform.php" method="post">
                 <fieldset>
                     <legend>Personal Information</legend>
                     <label for="name">Name:</label>
@@ -192,8 +196,14 @@
     <footer>
     <p>&copy; 2025 Katie Rock, LLMSW | Wayne State University</p>
     <p>
-        <a href="https://validator.w3.org/nu/?doc=http://141.217.120.86/fn9575/html/rock-INF6420-index.html" target="_blank" rel="noopener" style="color: #006633; text-decoration: none; font-weight: 600;">Validate HTML</a>
+        <a href="#" onclick="validateHTML(); return false;" style="color: #FF6B63; text-decoration: none; font-weight: 600;">Validate HTML</a>
     </p>
+    <script>
+    function validateHTML() {
+        var currentURL = encodeURIComponent(window.location.href);
+        window.open('https://validator.w3.org/nu/?doc=' + currentURL, '_blank', 'noopener');
+    }
+    </script>
     </footer>
 </body>
 </html>
