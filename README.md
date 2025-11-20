@@ -23,8 +23,8 @@ The Project 2.2 page also includes dynamic validator links that adapt to whateve
 - `images/`, `styles/` – Shared assets
 - `rock-Project1.1/` – Project 1.1 page (links to 2.1 DOCX and 2.2)
 - `rock-Project2.1/` – Landing + embedded doc scaffold; keep the DOCX outside of Git
-- `rock-Project2.2/` – Final 2.2 HTML with internal CSS
-- `rock-Project2.3/` – Placeholder to avoid 404s
+- `project2.2/` – Final 2.2 HTML with internal CSS and validators
+- `project3/` – Multi-page squirrels site with shared CSS and PHP form handler
 - `scripts/` – Deployment and packaging helpers
 
 Large binaries are excluded by default; `.gitignore` includes `*.docx`.
