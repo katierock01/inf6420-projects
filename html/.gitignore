@@ -1,0 +1,30 @@
+# OS junk
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# Archives
+*.zip
+*.tar
+*.tar.gz
+
+# Office docs (keep out of repo by default)
+*.docx
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Build output
+/dist/
+
+# Local tools/settings
+.vscode/
+.env
+
+# Shortcuts (Windows)
+*.lnk
+
+# Logs
+*.log
