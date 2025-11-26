@@ -1,0 +1,21 @@
+{
+  "name": "INF6420 Development Container",
+  "image": "mcr.microsoft.com/devcontainers/python:3.10",
+  "features": {
+	"ghcr.io/devcontainers/features/node:1": {
+	  "version": "18"
+	}
+  },
+  "customizations": {
+	"vscode": {
+	  "extensions": [
+		"ms-python.python",
+		"ms-python.vscode-pylance",
+		"GitHub.copilot",
+		"ritwickdey.LiveServer"
+	  ]
+	}
+  },
+  "postCreateCommand": "pip install -r requirements.txt",
+  "forwardPorts": [5500]
+}

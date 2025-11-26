@@ -8,23 +8,31 @@ desktop.ini
 *.tar
 *.tar.gz
 
-# Office docs (keep out of repo by default)
+# Office documents – keep only the required DOCX
 *.docx
+!inf6420-projects/rock-project2.1.docx
 
-# Python cache
+# Python cache and compiled files
 __pycache__/
-*.pyc
-*.pyo
+*.py[cod]
+
+# Node/Python virtual environments
+node_modules/
+.venv/
+venv/
 
 # Build output
 /dist/
+build/
 
-# Local tools/settings
-.vscode/
+# VS Code settings – ignore general settings but keep extension recommendations
+.vscode/*
+!.vscode/extensions.json
+
+# Environment secrets
 .env
 
-# Shortcuts (Windows)
+# Logs and shortcuts
+*.log
 *.lnk
 
-# Logs
-*.log

@@ -30,7 +30,8 @@ REMOTE_BASE = os.environ.get("SFTP_REMOTE_BASE", f"/home/{USER}/html/inf6420-pro
 
 # Public URLs to verify after upload
 HUB_URL = f"http://{HOST}/{USER}/html/inf6420-projects/index.html"
-P22_URL = f"http://{HOST}/{USER}/html/inf6420-projects/rock-Project2.2/rock-project2-2.html"
+P22_URL = f"http://{HOST}/{USER}/html/inf6420-projects/inf6420-projects/rock-project2-2.html"
+P31_URL = f"http://{HOST}/{USER}/html/inf6420-projects/rock-INF6420-index.html"
 
 
 def check_port(host: str, port: int = 22, timeout: float = 5.0) -> bool:
@@ -59,32 +60,19 @@ def collect_paths(project_root: Path) -> dict:
     # Files at root
     paths["files"].append((project_root / "index.html", "index.html"))
     paths["files"].append((project_root / "submission.html", "submission.html"))
+    paths["files"].append((project_root / "rock-INF6420-index.html", "rock-INF6420-index.html"))
 
     # Directories (recursive)
     paths["dirs"].append((project_root / "images", "images"))
     paths["dirs"].append((project_root / "styles", "styles"))
+    paths["dirs"].append((project_root / "docs", "docs"))
+    paths["dirs"].append((project_root / "scripts", "scripts"))
+    paths["dirs"].append((project_root / "inf6420-projects", "inf6420-projects"))
 
-    # Project 2.2 file
-    paths["files"].append((project_root / "rock-Project2.2" / "rock-project2-2.html",
-                            "rock-Project2.2/rock-project2-2.html"))
-
-    # Hub-linked artifacts to ensure the cards work
-    paths["files"].append((project_root / "rock-Project1.1" / "rock-Project1.1.index.html",
-                            "rock-Project1.1/rock-Project1.1.index.html"))
-    paths["files"].append((project_root / "rock-Project2.1" / "rock-project2.1.docx",
-                            "rock-Project2.1/rock-project2.1.docx"))
-    paths["files"].append((project_root / "rock-Project2.3" / "index.html",
-                            "rock-Project2.3/index.html"))
-    paths["files"].append((project_root / "docs" / "index.html",
-                            "docs/index.html"))
-
-    # Optional avatar used by hub (path may vary locally); upload if present
-    avatar1 = project_root / "rock-Project2.1" / "docs" / "myphoto.jpeg"
-    avatar2 = project_root / "rock-Project2.1" / "docs" / "docs" / "myphoto.jpeg"
-    if avatar1.exists():
-        paths["files"].append((avatar1, "rock-Project2.1/docs/myphoto.jpeg"))
-    elif avatar2.exists():
-        paths["files"].append((avatar2, "rock-Project2.1/docs/myphoto.jpeg"))
+    # Optional avatar used by hub; upload if present
+    avatar = project_root / "img" / "myphoto.jpg"
+    if avatar.exists():
+        paths["files"].append((avatar, "img/myphoto.jpg"))
 
     return paths
 
@@ -265,6 +253,7 @@ def main() -> int:
     print("Upload complete. Verifying public URLs…")
     verify_http(HUB_URL)
     verify_http(P22_URL)
+    verify_http(P31_URL)
     print("Done.")
     return 0
 

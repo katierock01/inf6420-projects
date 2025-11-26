@@ -1,0 +1,4 @@
+# Optional packages used by scripts
+paramiko>=3.0.0  # optional, used by scripts/upload_22.py for SFTP
+beautifulsoup4>=4.12.0  # optional, used for HTML parsing in scripts (if needed)
+lxml>=4.9.0  # optional, used with BeautifulSoup for fast parsing

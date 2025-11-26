@@ -1,0 +1,235 @@
+/* Base typography */
+html, body {
+	margin: 0;
+	padding: 0;
+}
+
+* {
+	box-sizing: border-box; /* CRITICAL: includes padding in width calculations */
+}
+
+body {
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	font-size: 16px; /* Readable body text */
+	background: #f7faf7; /* EmpathTech light background */
+	color: #1A1A1A;
+	line-height: 1.6; /* maintain readability */
+}
+
+/* Layout */
+#wrapper {
+	width: 90%;
+	max-width: 900px;
+	margin: 20px auto;
+	background: #ffffff; /* Clean white wrapper */
+	box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+	border-radius: 8px;
+	overflow: hidden;
+}
+
+#header {
+	background: linear-gradient(135deg, #115740, #1a6e52); /* EmpathTech green gradient */
+	color: #ffffff;
+	padding: 24px 20px;
+	text-align: center;
+}
+
+#navigation {
+	float: left;
+	width: 22%;
+	background: #e8f4ec; /* Light green tint */
+	padding: 15px 10px;
+	min-height: 400px;
+	text-align: center; /* Center navigation links for symmetry */
+}
+#navigation ul { list-style: none; margin: 0; padding: 0; }
+#navigation li { margin: 18px 0; } /* Spacing between menu items */
+#navigation a {
+	color: #115740;
+	text-decoration: none;
+	font-weight: 600;
+	padding: 8px 12px;
+	display: block;
+	border-radius: 6px;
+	transition: background 0.2s;
+}
+#navigation a:hover {
+	background: rgba(17, 87, 64, 0.1);
+	text-decoration: none;
+}
+
+#maincontent {
+	float: left;
+	width: 73%;
+	margin-left: 5%; /* nudge main text farther from nav */
+	background: #ffffff; /* white section */
+	padding: 20px 24px;
+	min-height: 400px;
+}
+
+#footer {
+	clear: both;
+	background: #115740; /* EmpathTech primary */
+	color: #ffffff;
+	padding: 16px 20px;
+	font-size: 0.9em;
+	text-align: center;
+}
+
+#footer a {
+	color: #ffffff;
+	text-decoration: underline;
+	font-weight: 600;
+}
+
+#footer a:hover {
+	color: #e9ffef;
+}
+
+/* Typography */
+h1 {
+	font-family: Georgia, "Times New Roman", serif;
+	font-size: 2em;
+	margin: 0.4em 0;
+	text-align: center;
+	color: #ffffff;
+}
+h2 {
+	font-family: Georgia, "Times New Roman", serif;
+	font-size: 1.6em;
+	margin: 0.6em 0 0.4em;
+	text-align: center;
+	color: #115740;
+}
+h3 {
+	font-family: Georgia, "Times New Roman", serif;
+	font-size: 1.3em;
+	margin: 0.5em 0;
+	text-align: center;
+	color: #115740;
+}
+p { margin: 1em 0; line-height: 1.6; }
+
+/* Images inside main content */
+#maincontent img {
+	max-width: 80%;
+	height: auto;
+	display: block;
+	margin: 15px auto;
+	border-radius: 6px;
+	box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+/* Make the first image slightly smaller */
+#maincontent img:first-of-type { max-width: 60%; }
+
+/* Enhanced Responsive Design for Project 4 */
+
+/* Tablet styles (768px and below) */
+@media (max-width: 768px) {
+	#navigation, #maincontent {
+		float: none;
+		width: 100%;
+		margin-left: 0;
+	}
+	#navigation {
+		min-height: auto;
+		padding: 15px;
+		order: 2; /* Navigation after content on mobile */
+	}
+	#navigation ul {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		gap: 10px;
+	}
+	#navigation li {
+		margin: 0;
+		flex: 1;
+		min-width: 120px;
+	}
+	#navigation a {
+		padding: 12px 8px;
+		font-size: 0.9em;
+	}
+	#maincontent {
+		order: 1;
+		padding: 15px 20px;
+	}
+	#wrapper {
+		width: 95%;
+		margin: 10px auto;
+	}
+	h1 { font-size: 1.8em; }
+	h2 { font-size: 1.4em; }
+	h3 { font-size: 1.2em; }
+	body { font-size: 15px; }
+}
+
+/* Mobile styles (480px and below) */
+@media (max-width: 480px) {
+	#wrapper {
+		width: 98%;
+		margin: 5px auto;
+		border-radius: 4px;
+	}
+	#header {
+		padding: 20px 15px;
+	}
+	#navigation {
+		padding: 10px 5px;
+	}
+	#navigation ul {
+		flex-direction: column;
+		gap: 5px;
+	}
+	#navigation li {
+		min-width: auto;
+	}
+	#navigation a {
+		padding: 10px 6px;
+		font-size: 0.85em;
+	}
+	#maincontent {
+		padding: 12px 15px;
+		min-height: 300px;
+	}
+	#footer {
+		padding: 12px 15px;
+		font-size: 0.8em;
+	}
+	h1 {
+		font-size: 1.6em;
+		margin: 0.3em 0;
+	}
+	h2 {
+		font-size: 1.3em;
+		margin: 0.5em 0 0.3em;
+	}
+	h3 {
+		font-size: 1.1em;
+		margin: 0.4em 0;
+	}
+	p { font-size: 0.95em; margin: 0.8em 0; }
+	#maincontent img {
+		max-width: 90%;
+		margin: 10px auto;
+	}
+	#maincontent img:first-of-type { max-width: 70%; }
+}
+
+/* Small mobile styles (360px and below) */
+@media (max-width: 360px) {
+	body { font-size: 14px; }
+	#wrapper {
+		width: 100%;
+		margin: 0;
+		border-radius: 0;
+	}
+	#header { padding: 15px 10px; }
+	#maincontent { padding: 10px 12px; }
+	#footer { padding: 10px 12px; }
+	h1 { font-size: 1.4em; }
+	h2 { font-size: 1.2em; }
+	h3 { font-size: 1.0em; }
+	#navigation a { padding: 8px 4px; font-size: 0.8em; }
+}

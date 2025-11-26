@@ -1,0 +1,12 @@
+{
+  "recommendations": [
+    "ms-python.python",        // Python language support
+    "ms-python.vscode-pylance",// Intelligent type checking and hints
+    "ms-toolsai.jupyter",      // Jupyter notebooks
+    "github.copilot",          // AI coding assistance (optional)
+    "ritwickdey.LiveServer"    // Live preview of HTML pages (optional)
+  ]
+}
+
+
+}
