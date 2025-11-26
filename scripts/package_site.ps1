@@ -25,8 +25,8 @@ $itemsToInclude = @(
     "styles",
     "rock-Project1.1",
     "rock-Project2.1",
-    "rock-Project2.2",
-    "rock-Project2.3",
+    "project2.2",
+    "project3",
     "docs"
 )
 

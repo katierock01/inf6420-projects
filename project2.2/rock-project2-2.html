@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Research paper: The impact of Artificial Intelligence on Web Accessibility — Katie Rock, LLMSW (INF 6420). Includes tables, styled lists, and validator links.">
+  <title>The Impact of Artificial Intelligence on Web Accessibility - Katie Rock</title>
+  <style>
+    /* Internal CSS Styling */
+    :root {
+      /* EmpathTech palette - consolidated variables */
+      --primary-color: #083B55;
+      --accent-color: #FF6B63;
+      --background-color: #E8F2F7;
+      --heading-font: 'Montserrat', Arial, sans-serif;
+      --body-font: 'Open Sans', Arial, sans-serif;
+      --text-color: #414B5C;
+      --overlay-bg: rgba(255, 255, 255, 0.96);
+      --link-hover: #FF5048;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    body {
+      /* Background image with a soft gradient fallback */
+      background-color: var(--background-color);
+      background-image: url('../images/background.svg');
+      background-size: cover;
+      background-attachment: fixed;
+      background-position: center;
+      font-family: var(--body-font);
+      line-height: 1.6;
+      color: var(--text-color);
+      padding: 20px;
+    }
+    
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      background-color: var(--overlay-bg);
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    }
+    /* Simple top-nav utility */
+    .top-nav { 
+      max-width: 900px; 
+      margin: 0 auto 12px; 
+      display: flex; 
+      justify-content: space-between; 
+      align-items: center; 
+    }
+    .top-nav a { 
+      color: var(--accent-color); 
+      text-decoration: underline; 
+      text-underline-offset: 2px; 
+      font-weight: 600; 
+      background: #e8f4ec; 
+      border: 1px solid #cfe8d8; 
+      padding: 7px 10px; 
+      border-radius: 8px; 
+    }
+    .top-nav a:hover { color: var(--link-hover); }
+    .top-nav a:focus { 
+      outline: 3px solid var(--accent-color); 
+      outline-offset: 2px; 
+    }
+
+    /* Global link styles */
+    a { color: var(--accent-color); text-decoration: underline; text-underline-offset: 2px; }
+    a:hover { color: var(--link-hover); }
+    a:focus { 
+      outline: 3px solid var(--accent-color); 
+      outline-offset: 2px; 
+      border-radius: 4px;
+    }
+    
+    /* Headings with serif font */
+    h1, h2, h3, h4, h5, h6 {
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      color: var(--primary-color);
+      margin-top: 30px;
+      margin-bottom: 15px;
+    }
+    
+    h1 {
+      font-size: 2.5em;
+      text-align: center;
+      margin-top: 0;
+      border-bottom: 3px solid var(--primary-color);
+      padding-bottom: 15px;
+    }
+    
+    h2 { font-size: 1.8em; }
+    h3 { font-size: 1.4em; }
+    
+    .author-info {
+      text-align: center;
+      margin: 20px 0 40px 0;
+      font-style: italic;
+      color: #555;
+    }
+    
+    p {
+      margin-bottom: 15px;
+      text-align: justify;
+    }
+    
+    /* Styled table with colored borders */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 25px 0;
+      border: 3px solid var(--primary-color);
+    }
+    
+    th {
+      background-color: var(--primary-color);
+      color: white;
+      padding: 12px;
+      text-align: left;
+      border: 2px solid var(--primary-color);
+      font-family: Georgia, serif;
+    }
+    
+    td {
+      padding: 10px;
+      border: 2px solid #cfe8d8;
+      background-color: rgba(255, 255, 255, 0.8);
+    }
+    
+    tr:nth-child(even) {
+      background-color: rgba(17, 87, 64, 0.06);
+    }
+    
+    /* Ordered list with different styling */
+    ol {
+      margin: 20px 0 20px 40px;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 1.05em;
+      color: #0d4230; /* deep green tone */
+      line-height: 1.8;
+    }
+    
+    ol li {
+      margin-bottom: 10px;
+    }
+    
+    /* Unordered list with different styling */
+    ul {
+      margin: 20px 0 20px 40px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 0.95em;
+      color: #1a6e52; /* green tone */
+      line-height: 1.7;
+    }
+    
+    ul li {
+      margin-bottom: 8px;
+    }
+    
+    .references {
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 2px solid var(--primary-color);
+    }
+    
+    .validation-links {
+      margin-top: 50px;
+      padding: 20px;
+      background-color: #f0fff7; /* soft green background */
+      border: 2px solid var(--primary-color);
+      border-radius: 5px;
+      text-align: center;
+    }
+    
+    .validation-links a {
+      display: inline-block;
+      margin: 10px 15px;
+      padding: 10px 20px;
+      background-color: var(--primary-color);
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+    
+    .validation-links a:hover {
+      /* Use a simple, validator-friendly hover color (no color-mix) */
+      background-color: var(--link-hover);
+    }
+
+    /* Strong keyboard focus for actionable links within the page */
+    .top-nav a:focus-visible,
+    .validation-links a:focus-visible,
+    a:focus-visible { outline: 3px solid #2b90ff; outline-offset: 2px; border-radius: 6px; }
+
+    /* Extras for rubric completeness */
+    .skip-link {
+      position: absolute; left: -9999px; top: auto; width: 1px; height: 1px; overflow: hidden;
+    }
+    .skip-link:focus {
+      left: 12px; top: 12px; width: auto; height: auto; padding: 8px 12px;
+      background: #fff; border: 2px solid var(--primary-color); border-radius: 6px; z-index: 1000;
+    }
+    figure { margin: 20px auto; text-align: center; }
+    figcaption { font-size: 0.9em; color: #555; margin-top: 8px; }
+    blockquote {
+      border-left: 4px solid var(--primary-color);
+      padding: 10px 16px;
+      /* Subtle tint using RGBA for broad validator compatibility */
+      background: rgba(17, 87, 64, 0.10); /* based on #115740 */
+      font-style: italic; margin: 16px 0;
+    }
+  table caption { caption-side: top; font-weight: 600; padding: 8px; color: #0d4230; text-align: left; }
+    footer { margin-top: 40px; padding-top: 20px; border-top: 2px solid var(--primary-color); font-size: 0.95em; color: #444; }
+
+    /* Respect reduced motion */
+    @media (prefers-reduced-motion: reduce) {
+      * { animation: none !important; transition: none !important; }
+    }
+
+    /* Print-friendly styling */
+    @media print {
+      body { background: #fff !important; }
+      .container { box-shadow: none !important; background: #fff !important; }
+      .top-nav, .validation-links { display: none !important; }
+      a { text-decoration: underline; color: #000; }
+      h1, h2, h3, th { color: #000 !important; border-color: #000 !important; }
+      table { border-color: #000 !important; }
+      td { border-color: #444 !important; }
+    }
+  </style>
+</head>
+<body id="top">
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <nav class="top-nav" aria-label="Site">
+    <a href="../INF6420-index.html">&larr; Back to Course Home</a>
+    <a id="dynamic-validate" href="#">Validate this page</a>
+  </nav>
+  <main class="container" id="main">
+    <h1>The Impact of Artificial Intelligence on Web Accessibility</h1>
+    
+    <div class="author-info">
+      Katie Rock, LLMSW<br>
+      INF 6420 Web Development<br>
+      Wayne State University<br>
+      October 13, 2025
+    </div>
+
+    <!-- Removed brand-specific wordmark to keep assignment neutral and hub-aligned -->
+
+    <h2>1. What Is Web Accessibility and Why It Matters</h2>
+    
+    <p>Web accessibility involves creating digital environments where everyone, regardless of disability or limitation, can fully participate. It includes ensuring that content can be perceived, navigated, and interacted with using assistive technologies. This practice is grounded in ethical, social, and legal obligations.</p>
+    
+    <p>As a licensed Master of Social Work professional now studying Information Sciences, I am acutely aware of the systemic barriers that hinder access, especially for individuals entangled in complex public systems like guardianship. Web accessibility and the guardianship system both require a foundational commitment to transparency and equity. Without access, there is no participation—without participation, there is no justice.</p>
+    
+    <table>
+      <caption>Key standards and legal anchors for accessibility</caption>
+      <thead>
+        <tr>
+          <th scope="col">Federal Law/Standard</th>
+          <th scope="col">Description</th>
+          <th scope="col">Impact</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Americans with Disabilities Act (ADA)</td>
+          <td>Requires public accommodations to be accessible</td>
+          <td>Websites must be accessible; violations can result in lawsuits</td>
+        </tr>
+        <tr>
+          <td>Section 508 of Rehabilitation Act</td>
+          <td>Federal agencies must ensure accessible communications</td>
+          <td>Government websites and services must meet accessibility standards</td>
+        </tr>
+        <tr>
+          <td>Robles v. Domino's Pizza (2019)</td>
+          <td>Court ruling affirming websites as public accommodations</td>
+          <td>Established legal precedent for web accessibility requirements</td>
+        </tr>
+        <tr>
+          <td>WCAG 2.2 Guidelines</td>
+          <td>International standards for web accessibility</td>
+          <td>Provides technical framework for implementing accessibility</td>
+        </tr>
+      </tbody>
+    </table>
+    
+    <p>Federal laws such as the Americans with Disabilities Act (ADA) and Section 508 of the Rehabilitation Act underscore the obligation to make public services and communications accessible. The 2019 ruling in Robles v. Domino's Pizza affirmed that websites must be considered public accommodations under the ADA. When institutions ignore digital accessibility, they not only limit participation but potentially violate civil rights.</p>
+    
+    <p>Accessibility enhances inclusivity across many populations. Alt text for images, logical page structures, captions, and consistent navigation improve usability for all users, including those using mobile devices, older adults, and people in constrained environments. For example, a visually impaired user may rely on screen readers to access online banking, while someone with limited mobility may use keyboard navigation to fill out government forms. These features are not just conveniences; they are essential for independent living and equal opportunity.</p>
+    
+    <h3>WCAG 2.2 POUR Principles</h3>
+    <ul>
+      <li><strong>Perceivable:</strong> Content must be presented in ways users can perceive (text alternatives, captions, adaptable layouts)</li>
+      <li><strong>Operable:</strong> Interface components must be navigable (keyboard access, adequate time, seizure prevention)</li>
+      <li><strong>Understandable:</strong> Information and operation must be clear (readable text, predictable behavior, input assistance)</li>
+      <li><strong>Robust:</strong> Content must work with current and future technologies (compatible with assistive technologies)
+        <ul>
+          <li>Use semantic landmarks (header, main, footer)</li>
+          <li>Associate labels with inputs; provide ARIA only when needed</li>
+          <li>Ensure HTML validates with no errors</li>
+        </ul>
+      </li>
+    </ul>
+    
+    <p>The Web Content Accessibility Guidelines (WCAG 2.2) distill accessibility into four principles: Perceivable, Operable, Understandable, and Robust (POUR). Developers often apply ARIA roles and semantic HTML to support screen readers. These best practices—like providing keyboard navigation, clear labels, high color contrast, and scalable text—ensure that content adapts to diverse needs.</p>
+    
+    <p>Importantly, accessibility is not simply about accommodation; it is a reflection of respect. As a social worker, I understand that the digital world must be designed as a space of inclusion and agency, particularly for those historically excluded or rendered invisible. The ethical imperative is clear: digital spaces must be built for everyone, not just the majority.</p>
+
+    <h2>2. How Artificial Intelligence Affects Web Accessibility</h2>
+    
+    <p>Artificial Intelligence (AI) has dramatically transformed how we detect, correct, and implement accessibility features. When designed responsibly, AI can significantly reduce barriers. However, when applied carelessly, it risks perpetuating exclusion.</p>
+    
+    <p>AI tools support accessibility through automation and customization. Technologies like automated transcription convert audio to readable text, benefiting users who are deaf or hard of hearing. AI-generated image descriptions support blind users. Personalization tools adjust layouts based on user behavior or needs. For instance, AI can analyze user preferences and automatically adjust font sizes, color schemes, or navigation structures to suit individual needs.</p>
+    
+    <h3>AI-Powered Accessibility Tools</h3>
+    <ol>
+      <li><strong>Lighthouse:</strong> Google's automated tool for auditing web page quality including accessibility</li>
+      <li><strong>Accessibility Insights:</strong> Microsoft's comprehensive testing platform with AI-assisted detection</li>
+      <li><strong>axe DevTools:</strong> Browser extension that scans for WCAG violations and provides remediation guidance</li>
+      <li><strong>Dynamic Screen Readers:</strong> AI-powered readers that interpret complex interfaces in real-time</li>
+      <li><strong>Automated Transcription Services:</strong> Convert speech to text with increasing accuracy</li>
+    </ol>
+    
+    <p>Audit tools like Lighthouse, Accessibility Insights, and axe DevTools quickly scan for errors such as low contrast, unlabeled buttons, or improper heading structures. AI-powered screen readers can dynamically interpret complex interfaces or deliver voice-based browsing. These tools have made it possible for organizations to identify and address accessibility issues at scale, reducing the time and cost associated with manual testing.</p>
+    
+    <table>
+      <caption>Where AI helps and where humans must review</caption>
+      <thead>
+        <tr>
+          <th scope="col">AI Strength</th>
+          <th scope="col">AI Limitation</th>
+          <th scope="col">Human Oversight Needed</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Automated error detection</td>
+          <td>May miss contextual issues</td>
+          <td>Manual review of flagged items</td>
+        </tr>
+        <tr>
+          <td>Image description generation</td>
+          <td>Can fabricate or miss context</td>
+          <td>Verify accuracy and relevance</td>
+        </tr>
+        <tr>
+          <td>Speech recognition</td>
+          <td>Struggles with accents/patterns</td>
+          <td>Test with diverse user groups</td>
+        </tr>
+        <tr>
+          <td>Scalable testing</td>
+          <td>Training data may lack diversity</td>
+          <td>Include disabled users in testing</td>
+        </tr>
+      </tbody>
+    </table>
+    
+    <p>Yet the strengths of AI also highlight its limitations. Algorithms may fabricate image descriptions or fail to detect missing context. Speech recognition often struggles with nonstandard accents or vocal patterns—misrecognizing or failing to respond entirely. Furthermore, datasets used to train AI may lack representation from people with disabilities, reinforcing bias. For example, an AI trained primarily on images of able-bodied individuals may fail to accurately describe assistive devices or environments tailored for disabled users.</p>
+    
+    <p>Critically, organizations may falsely believe that automated compliance tools are sufficient. True accessibility requires real-world testing by people with disabilities. As with social work assessments, numbers alone cannot capture lived experience. AI can assist in highlighting errors but cannot substitute for inclusive design thinking. Human oversight remains essential to ensure that AI-driven solutions are effective and equitable.</p>
+    
+    <p>In both social work and tech, the core principle must remain the same: technology should serve humanity, not the other way around. AI should be a tool for empowerment, not a barrier to inclusion.</p>
+
+    <blockquote cite="https://www.w3.org/WAI/fundamentals/accessibility-intro/">
+      “The power of the Web is in its universality. Access by everyone regardless of disability is an essential aspect.”
+      <br>&mdash; Tim Berners‑Lee
+    </blockquote>
+
+    <h2>3. How to Evaluate a Website for Accessibility</h2>
+    
+    <p>Evaluating a site's accessibility requires both technical testing and human-centered feedback. Manual evaluation starts with navigating a website using only a keyboard—confirming that users can reach every link, button, and menu without a mouse. Then, screen readers like NVDA or VoiceOver are used to test the semantic flow and ensure elements are announced in a logical order.</p>
+    
+    <h3>Key Evaluation Factors</h3>
+    <ul>
+      <li>Heading hierarchy (H1, H2, H3 structure)</li>
+      <li>Link clarity and descriptive text</li>
+      <li>Logical tab order for keyboard navigation</li>
+      <li>Color contrast ratios (minimum 4.5:1 for body text)</li>
+      <li>Font scalability and readability</li>
+      <li>Form labels and error messages</li>
+      <li>Alternative text for images</li>
+      <li>ARIA roles and landmarks</li>
+    </ul>
+    
+    <p>Key factors include heading hierarchy, link clarity, tab order, color contrast, and font scalability. Automated tools like WAVE and axe DevTools can identify common issues, including missing form labels or improper ARIA roles. However, automated results must be interpreted contextually. For example, a tool may flag a missing alt attribute, but only a human tester can determine if the description is meaningful and accurate.</p>
+    
+    <p>An effective audit logs each issue, categorizes its severity, cites the WCAG standard violated, and offers a fix. This resembles clinical documentation in social work—detailed, traceable, and outcome-oriented. Regular audits should be scheduled, and remediation plans should be tracked to ensure ongoing compliance.</p>
+    
+    <p>True accessibility is iterative. Just as practitioners revisit treatment plans, developers must retest interfaces as content evolves. Creating accessible digital systems is not a one-time achievement, but a continuous process requiring vigilance and feedback. Engaging users with disabilities in the testing process provides invaluable insights and helps organizations prioritize improvements that have the greatest impact.</p>
+
+    <h2>4. AI and Ethical Accountability</h2>
+    
+    <p>With the rise of automated testing and AI-generated fixes, ethical accountability becomes critical. It is not enough for AI tools to scan code and output a score. These outputs must be transparent, reproducible, and verifiable. A tool that claims a page is "compliant" without justifying its evaluation risks misleading decision-makers.</p>
+    
+    <p>This mirrors the challenge in guardianship reporting—when a guardian files generic reports without supporting data, oversight is impossible. Whether in digital audits or life-altering legal decisions, trust must be built on evidence, transparency, and review.</p>
+    
+    <h3>Principles of Ethical AI Development</h3>
+    <ol>
+      <li>Use inclusive and diverse training datasets</li>
+      <li>Involve people with disabilities in design and testing</li>
+      <li>Maintain transparency in algorithms and decision-making processes</li>
+      <li>Document rationale for recommendations and changes</li>
+      <li>Treat AI outputs as suggestions requiring human validation</li>
+      <li>Regularly audit AI systems for bias and effectiveness</li>
+      <li>Provide clear explanations of how accessibility determinations are made</li>
+    </ol>
+    
+    <p>Ethical AI development requires inclusive datasets, diverse perspectives, and transparency. AI should always be used to augment human insight, not replace it. Developers must remain aware that automated tools cannot understand context, emotion, or the human consequences of poor accessibility. For example, an AI may recommend a color scheme that meets contrast requirements but is visually jarring or confusing for users with cognitive disabilities.</p>
+    
+    <p>Therefore, true accountability means involving disabled users in design, testing, and evaluation. It also means treating AI recommendations not as verdicts, but as suggestions to be evaluated with empathy and experience. Documentation of decisions, rationale, and user feedback should be maintained to ensure that accessibility improvements are both effective and ethical.</p>
+
+    <h2>5. Public Policy and Advocacy Connections</h2>
+    
+    <p>Web accessibility is not merely a technical issue; it is a civil rights imperative. Increasingly, AI systems manage public service portals—from healthcare to legal aid to benefits eligibility. If these systems are inaccessible, they further marginalize vulnerable communities.</p>
+    
+    <p>This is especially relevant in systems like guardianship, where older adults and individuals with cognitive impairments rely on public platforms for information, legal representation, and access to justice. When these systems are digitally inaccessible, the risk of abuse and neglect increases. For example, a poorly designed benefits portal may prevent users from applying for essential services, leading to financial hardship or loss of independence.</p>
+    
+    <p>Drawing from social work values and information science methods, I argue for a hybrid approach to advocacy: one that uses AI as a tool for exposure and accountability. For example, automated systems can flag missing documents in guardianship filings or detect when required notices are absent—highlighting cases for deeper review. AI can also be used to monitor compliance with accessibility standards and generate reports for policymakers and advocates.</p>
+    
+    <p>Policymakers must treat accessibility and transparency as public obligations. By embedding AI within ethical frameworks, we can develop systems that identify violations, promote inclusion, and restore agency to those silenced by bureaucracy. Collaboration between technologists, social workers, and disabled communities is essential to ensure that digital systems serve the public good.</p>
+
+    <h2>6. Conclusion</h2>
+    
+    <p>Artificial Intelligence, when grounded in ethical values and informed by lived experience, has the potential to radically expand digital accessibility. It offers efficiency, scalability, and insight. But it is not a substitute for humanity.</p>
+    
+    <p>Automation can generate captions and identify code errors. It cannot, however, sense exclusion, understand cultural nuance, or anticipate human emotion. These insights emerge only when technology partners with people—especially those whose needs have been historically ignored.</p>
+    
+    <p>As technology advances, we must resist the urge to prioritize convenience over conscience. Whether in web design or public systems like guardianship, progress depends on transparency, empathy, and the unwavering commitment to equity.</p>
+    
+    <p>AI holds great promise, but only when used to uphold—not override—our shared responsibility to make the world accessible, understandable, and just for all. The future of accessibility depends on our willingness to listen, learn, and adapt—ensuring that every voice is heard and every barrier is removed.</p>
+
+    <div class="references">
+      <h2>References</h2>
+      <ul>
+        <li>ADA.gov (2024). ADA Requirements: Effective Communication. <a href="https://www.ada.gov/resources/effective-communication/" target="_blank">https://www.ada.gov/resources/effective-communication/</a></li>
+        <li>U.S. Access Board (2023). Section 508 Standards. <a href="https://www.access-board.gov/ict/" target="_blank">https://www.access-board.gov/ict/</a></li>
+        <li>W3C (2023). Web Content Accessibility Guidelines (WCAG 2.2). <a href="https://www.w3.org/WAI/" target="_blank">https://www.w3.org/WAI/</a></li>
+        <li>WebAIM (2023). Introduction to Web Accessibility. <a href="https://webaim.org/intro/" target="_blank">https://webaim.org/intro/</a></li>
+        <li>Microsoft Accessibility Insights (2025). AI Assisted Testing Documentation. <a href="https://accessibilityinsights.io" target="_blank">https://accessibilityinsights.io</a></li>
+        <li>National Council on Disability (2023). Equity in Digital Design.</li>
+        <li>Robles v. Domino's Pizza, 913 F.3d 898 (9th Cir. 2019).</li>
+      </ul>
+    </div>
+
+    <div class="validation-links">
+      <h3>Validation</h3>
+      <p>This page has been validated for accessibility and standards compliance:</p>
+      <a id="validate-html" href="https://validator.w3.org/nu/?doc=http://141.217.120.86/fn9575/html/inf6420-projects/rock-Project2.2/rock-project2-2.html" target="_blank">Validate HTML</a>
+      <a id="validate-css" href="https://jigsaw.w3.org/css-validator/validator?uri=http://141.217.120.86/fn9575/html/inf6420-projects/rock-Project2.2/rock-project2-2.html" target="_blank">Validate CSS</a>
+    </div>
+    <footer>
+      <address>
+        Contact: <a href="mailto:fn9575@wayne.edu">fn9575@wayne.edu</a> · Wayne State University
+      </address>
+      <p>Last updated: <time datetime="2025-10-24">October 24, 2025</time> · <a href="#top">Back to top</a></p>
+    </footer>
+  </main>
+  <script>
+    // Make validator links dynamic to current URL so they work locally and on the server
+    (function(){
+      try {
+        const url = window.location.href;
+        const html = document.getElementById('validate-html');
+        const css = document.getElementById('validate-css');
+        if (html) html.href = 'https://validator.w3.org/nu/?doc=' + encodeURIComponent(url);
+        if (css) css.href = 'https://jigsaw.w3.org/css-validator/validator?uri=' + encodeURIComponent(url);
+        const dyn = document.getElementById('dynamic-validate');
+        if (dyn) dyn.href = 'https://validator.w3.org/nu/?doc=' + encodeURIComponent(url);
+        // Security: ensure all target=_blank links use rel noopener
+        document.querySelectorAll('a[target="_blank"]').forEach(a => {
+          const rel = (a.getAttribute('rel') || '').toLowerCase();
+          if (!rel.includes('noopener')) a.setAttribute('rel', (rel + ' noopener noreferrer').trim());
+        });
+      } catch (e) { /* noop */ }
+    })();
+  </script>
+</body>
+</html>

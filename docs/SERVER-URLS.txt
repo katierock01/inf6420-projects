@@ -15,8 +15,11 @@ http://141.217.120.86/fn9575/html/inf6420-projects/rock-Project2.1/docs/myphoto.
 Project 2.2 – HTML conversion (primary viewing URL):
 http://141.217.120.86/fn9575/html/inf6420-projects/rock-Project2.2/rock-project2-2.html
 
-Project 2.3 – placeholder (prevents 404 while in progress):
-http://141.217.120.86/fn9575/html/inf6420-projects/rock-Project2.3/index.html
+Project 3 – squirrels site entry page:
+http://141.217.120.86/fn9575/html/inf6420-projects/project3/index.html
+
+Project 3 – primary "home" page:
+http://141.217.120.86/fn9575/html/inf6420-projects/project3/home.html
 
 Notes:
 - Server is HTTP-only; browsers may warn about "insecure download" for the DOCX. Choose Keep/Keep anyway.

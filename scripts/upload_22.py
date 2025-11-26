@@ -65,16 +65,20 @@ def collect_paths(project_root: Path) -> dict:
     paths["dirs"].append((project_root / "styles", "styles"))
 
     # Project 2.2 file
-    paths["files"].append((project_root / "rock-Project2.2" / "rock-project2-2.html",
-                            "rock-Project2.2/rock-project2-2.html"))
+    paths["files"].append((project_root / "project2.2" / "rock-project2-2.html",
+                            "project2.2/rock-project2-2.html"))
+    paths["files"].append((project_root / "project2.2" / "index.html",
+                            "project2.2/index.html"))
 
     # Hub-linked artifacts to ensure the cards work
     paths["files"].append((project_root / "rock-Project1.1" / "rock-Project1.1.index.html",
                             "rock-Project1.1/rock-Project1.1.index.html"))
     paths["files"].append((project_root / "rock-Project2.1" / "rock-project2.1.docx",
                             "rock-Project2.1/rock-project2.1.docx"))
-    paths["files"].append((project_root / "rock-Project2.3" / "index.html",
-                            "rock-Project2.3/index.html"))
+    paths["files"].append((project_root / "project3" / "index.html",
+                            "project3/index.html"))
+    paths["files"].append((project_root / "project3" / "home.html",
+                            "project3/home.html"))
     paths["files"].append((project_root / "docs" / "index.html",
                             "docs/index.html"))
 
@@ -122,8 +126,9 @@ def upload_with_paramiko(project_root: Path, password: str) -> bool:
         paths = collect_paths(project_root)
         # Ensure base dir
         ensure_remote_dirs_paramiko(sftp, REMOTE_BASE)
-        # Ensure project folder for 2.2
-        ensure_remote_dirs_paramiko(sftp, f"{REMOTE_BASE}/rock-Project2.2")
+        # Ensure project folders
+        ensure_remote_dirs_paramiko(sftp, f"{REMOTE_BASE}/project2.2")
+        ensure_remote_dirs_paramiko(sftp, f"{REMOTE_BASE}/project3")
 
         # Upload files
         for local, rel in paths["files"]:
@@ -172,11 +177,11 @@ def upload_with_openssh(project_root: Path) -> bool:
     lines = [
         f"cd {REMOTE_BASE}",
         # ensure folders exist (mkdir -p style)
-        "mkdir rock-Project2.2",
+        "mkdir project2.2",
+        "mkdir project3",
         "mkdir rock-Project1.1",
         "mkdir rock-Project2.1",
         "mkdir rock-Project2.1/docs",
-        "mkdir rock-Project2.3",
         "mkdir docs",
     ]
 
@@ -191,10 +196,10 @@ def upload_with_openssh(project_root: Path) -> bool:
 
     lines += [
         "ls -l",
-        "ls -l rock-Project2.2",
+        "ls -l project2.2",
+        "ls -l project3",
         "ls -l rock-Project1.1",
         "ls -l rock-Project2.1",
-        "ls -l rock-Project2.3",
         "ls -l docs",
         "exit",
     ]

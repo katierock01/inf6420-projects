@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>INF 6420 – Project 2.2</title>
+  <meta name="description" content="Project 2.2: Research paper on the impact of Artificial Intelligence on Web Accessibility">
+  <meta name="author" content="Katie Rock">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <style>
+    :root {
+      --primary-color: #083B55;
+      --accent-color: #FF6B63;
+      --background-color: #E8F2F7;
+      --heading-font: 'Montserrat', Arial, sans-serif;
+      --body-font: 'Open Sans', Arial, sans-serif;
+    }
+    
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    body {
+      background: var(--background-color);
+      color: #222;
+      font-family: var(--body-font);
+      line-height: 1.6;
+    }
+    
+    h1, h2, h3 {
+      font-family: var(--heading-font);
+      color: var(--primary-color);
+    }
+    
+    a {
+      color: var(--accent-color);
+      text-decoration: none;
+    }
+    
+    a:focus {
+      outline: 3px solid var(--accent-color);
+      outline-offset: 2px;
+      border-radius: 4px;
+    }
+    
+    header {
+      background: linear-gradient(135deg, var(--primary-color), #0D5A7F);
+      color: white;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+    
+    header h1 {
+      color: white;
+      margin: 0;
+      font-size: 2rem;
+    }
+    
+    header p {
+      margin: 0.5rem 0 0;
+      color: #e8ecff;
+    }
+    
+    .container {
+      max-width: 1100px;
+      margin: 1.5rem auto;
+      padding: 0 1rem 2rem;
+    }
+    
+    .bar {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      margin: 0 0 1.5rem;
+    }
+    
+    .bar a {
+      background: white;
+      color: var(--primary-color);
+      border-radius: 6px;
+      padding: 0.75rem 1rem;
+      font-weight: 600;
+      text-decoration: none;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      transition: transform 0.2s ease;
+    }
+    
+    .bar a:hover {
+      transform: translateY(-2px);
+    }
+    
+    .content-card {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+      padding: 2rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    .content-card h2 {
+      margin-bottom: 1rem;
+    }
+    
+    .content-card p {
+      margin-bottom: 1rem;
+    }
+    
+    .project-link {
+      display: inline-block;
+      background: var(--accent-color);
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border-radius: 6px;
+      font-weight: 600;
+      margin-top: 1rem;
+      transition: background 0.3s ease;
+    }
+    
+    .project-link:hover {
+      background: #d96642;
+    }
+    
+    .project-link:focus {
+      outline: 3px solid var(--primary-color);
+      outline-offset: 2px;
+    }
+    
+    footer {
+      font-size: 0.8em;
+      font-style: italic;
+      color: #666;
+      text-align: center;
+      padding: 2rem 1rem;
+      margin-top: 2rem;
+      border-top: 1px solid #ddd;
+    }
+    
+    footer a {
+      color: var(--accent-color);
+    }
+    
+    /* Print styles */
+    @media print {
+      body {
+        background: white;
+      }
+      header, .bar {
+        background: white !important;
+        color: black !important;
+      }
+      .content-card {
+        border: 1px solid #ddd;
+      }
+    }
+    
+    /* Reduced motion */
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header role="banner">
+    <h1>INF 6420 – Project 2.2</h1>
+    <p>The Impact of Artificial Intelligence on Web Accessibility</p>
+  </header>
+
+  <main class="container">
+    <nav class="bar" aria-label="Breadcrumb navigation">
+      <a href="../INF6420-index.html" aria-label="Return to course homepage">&larr; Back to Course Home</a>
+      <a href="../index.html" aria-label="View projects index">Projects Index</a>
+    </nav>
+
+    <article class="content-card">
+      <h2>Project 2.2 - Research Paper</h2>
+      <p>This project presents a research paper on the impact of Artificial Intelligence on Web Accessibility, featuring tables, styled lists, and proper HTML/CSS validation.</p>
+      <a href="rock-project2-2.html" class="project-link" aria-label="View full research paper">View Full Project</a>
+    </article>
+  </main>
+  
+  <footer role="contentinfo">
+    <p>&copy; 2025 Katie Rock | Wayne State University</p>
+    <nav aria-label="Validation links">
+      <a href="https://validator.w3.org/nu/?doc=" id="validate-html" aria-label="Validate HTML markup">Validate HTML</a> | 
+      <a href="https://jigsaw.w3.org/css-validator/validator?uri=" id="validate-css" aria-label="Validate CSS styles">Validate CSS</a>
+    </nav>
+  </footer>
+  
+  <script>
+    (function(){
+      try {
+        const url = window.location.href;
+        const html = document.getElementById('validate-html');
+        const css = document.getElementById('validate-css');
+        if (html) html.href = 'https://validator.w3.org/nu/?doc=' + encodeURIComponent(url);
+        if (css) css.href = 'https://jigsaw.w3.org/css-validator/validator?uri=' + encodeURIComponent(url);
+      } catch (e) { /* noop */ }
+    })();
+  </script>
+</body>
+</html>
