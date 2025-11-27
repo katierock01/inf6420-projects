@@ -9,8 +9,9 @@ Upload INF6420-Projects site assets to the WSU server via SFTP.
 
 Usage: just run the script; you'll be prompted for your password when needed.
 
-Note: This cannot bypass a blocked port 22. If your network or ISP blocks SSH/SFTP,
-connect to WSU VPN or switch to a different network (e.g., mobile hotspot) first.
+NOTE: You MUST be connected to WSU's GlobalProtect VPN (or an equivalent tunnel) before
+running this script so that port 22 is reachable. The script itself checks connectivity
+and will inform you if the connection fails.
 """
 from __future__ import annotations
 import os
@@ -19,7 +20,6 @@ import socket
 import shutil
 import tempfile
 import subprocess
-from pathlib import Path
 from getpass import getpass
 from typing import Optional
 
@@ -41,12 +41,12 @@ def check_port(host: str, port: int = 22, timeout: float = 5.0) -> bool:
         return False
 
 
-def windows_to_sftp_path(p: Path) -> str:
+def windows_to_sftp_path(p: str) -> str:
     # Use forward slashes; keep in quotes when writing batch
-    return str(p).replace("\\", "/")
+    return p.replace("\\", "/")
 
 
-def collect_paths(project_root: Path) -> dict:
+def collect_paths(project_root: str) -> dict:
     """Return dict of local paths to upload and remote paths.
     Structure:
       {
@@ -57,33 +57,33 @@ def collect_paths(project_root: Path) -> dict:
     paths = {"files": [], "dirs": []}
 
     # Files at root
-    paths["files"].append((project_root / "index.html", "index.html"))
-    paths["files"].append((project_root / "submission.html", "submission.html"))
+    paths["files"].append((os.path.join(project_root, "index.html"), "index.html"))
+    paths["files"].append((os.path.join(project_root, "submission.html"), "submission.html"))
 
     # Directories (recursive)
-    paths["dirs"].append((project_root / "images", "images"))
-    paths["dirs"].append((project_root / "styles", "styles"))
+    paths["dirs"].append((os.path.join(project_root, "images"), "images"))
+    paths["dirs"].append((os.path.join(project_root, "styles"), "styles"))
 
     # Project 2.2 file
-    paths["files"].append((project_root / "rock-Project2.2" / "rock-project2-2.html",
+    paths["files"].append((os.path.join(project_root, "rock-Project2.2", "rock-project2-2.html"),
                             "rock-Project2.2/rock-project2-2.html"))
 
     # Hub-linked artifacts to ensure the cards work
-    paths["files"].append((project_root / "rock-Project1.1" / "rock-Project1.1.index.html",
+    paths["files"].append((os.path.join(project_root, "rock-Project1.1", "rock-Project1.1.index.html"),
                             "rock-Project1.1/rock-Project1.1.index.html"))
-    paths["files"].append((project_root / "rock-Project2.1" / "rock-project2.1.docx",
+    paths["files"].append((os.path.join(project_root, "rock-Project2.1", "rock-project2.1.docx"),
                             "rock-Project2.1/rock-project2.1.docx"))
-    paths["files"].append((project_root / "rock-Project2.3" / "index.html",
+    paths["files"].append((os.path.join(project_root, "rock-Project2.3", "index.html"),
                             "rock-Project2.3/index.html"))
-    paths["files"].append((project_root / "docs" / "index.html",
+    paths["files"].append((os.path.join(project_root, "docs", "index.html"),
                             "docs/index.html"))
 
     # Optional avatar used by hub (path may vary locally); upload if present
-    avatar1 = project_root / "rock-Project2.1" / "docs" / "myphoto.jpeg"
-    avatar2 = project_root / "rock-Project2.1" / "docs" / "docs" / "myphoto.jpeg"
-    if avatar1.exists():
+    avatar1 = os.path.join(project_root, "rock-Project2.1", "docs", "myphoto.jpeg")
+    avatar2 = os.path.join(project_root, "rock-Project2.1", "docs", "docs", "myphoto.jpeg")
+    if os.path.exists(avatar1):
         paths["files"].append((avatar1, "rock-Project2.1/docs/myphoto.jpeg"))
-    elif avatar2.exists():
+    elif os.path.exists(avatar2):
         paths["files"].append((avatar2, "rock-Project2.1/docs/myphoto.jpeg"))
 
     return paths
@@ -101,7 +101,7 @@ def ensure_remote_dirs_paramiko(sftp, remote_dir: str) -> None:
             sftp.mkdir(cur)
 
 
-def upload_with_paramiko(project_root: Path, password: str) -> bool:
+def upload_with_paramiko(project_root: str, password: str) -> bool:
     try:
         import paramiko  # type: ignore
     except Exception as e:
@@ -127,7 +127,7 @@ def upload_with_paramiko(project_root: Path, password: str) -> bool:
 
         # Upload files
         for local, rel in paths["files"]:
-            if not local.exists():
+            if not os.path.exists(local):
                 print(f"WARNING: missing local file: {local}")
                 continue
             remote = f"{REMOTE_BASE}/{rel}"
@@ -138,20 +138,20 @@ def upload_with_paramiko(project_root: Path, password: str) -> bool:
 
         # Upload directories recursively
         for local_dir, rel_dir in paths["dirs"]:
-            if not local_dir.exists():
+            if not os.path.exists(local_dir):
                 print(f"WARNING: missing local directory: {local_dir}")
                 continue
             for root, dirs, files in os.walk(local_dir):
-                rel_root = Path(root).relative_to(project_root)
+                rel_root = os.path.relpath(root, project_root)
                 remote_dir_full = f"{REMOTE_BASE}/{windows_to_sftp_path(rel_root)}"
                 ensure_remote_dirs_paramiko(sftp, remote_dir_full)
                 for d in dirs:
                     ensure_remote_dirs_paramiko(sftp, f"{remote_dir_full}/{d}")
                 for f in files:
-                    lp = Path(root) / f
+                    lp = os.path.join(root, f)
                     rp = f"{remote_dir_full}/{f}"
                     print(f"put {lp} -> {rp}")
-                    sftp.put(str(lp), rp)
+                    sftp.put(lp, rp)
     finally:
         sftp.close()
         ssh.close()
@@ -160,7 +160,7 @@ def upload_with_paramiko(project_root: Path, password: str) -> bool:
     return True
 
 
-def upload_with_openssh(project_root: Path) -> bool:
+def upload_with_openssh(project_root: str) -> bool:
     sftp_path = shutil.which("sftp")
     if not sftp_path:
         print("OpenSSH sftp not found on PATH. Install 'OpenSSH Client' in Windows Optional Features or use WinSCP.")
@@ -234,7 +234,8 @@ def verify_http(url: str) -> None:
 
 
 def main() -> int:
-    project_root = Path(__file__).resolve().parent.parent  # scripts/ -> project root
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    project_root = os.path.dirname(script_dir)  # scripts/ -> project root
 
     print(f"Project root: {project_root}")
     print(f"Target: {USER}@{HOST}:{REMOTE_BASE}")

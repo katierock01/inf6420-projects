@@ -1,0 +1,69 @@
+name: Validate and Package INF6420 Projects
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  audit-cleanup-build:
+    runs-on: ubuntu-latest
+    steps:
+      # Check out your repository
+      - uses: actions/checkout@v4
+
+      # Set up Python
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+
+      # Install Python dependencies (if any)
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          # Install packages listed in requirements.txt if present
+          if [ -f requirements.txt ]; then
+            python -m pip install -r requirements.txt
+          fi
+
+      # Run the cleanup script to reorganize files into the canonical layout
+      - name: Run cleanup script
+        run: |
+          if [ -f cleanup_inf6420.py ]; then
+            python cleanup_inf6420.py
+          else
+            echo "cleanup_inf6420.py not found!"
+            exit 1
+          fi
+
+      # Run the audit script to ensure no missing files or legacy folders remain
+      - name: Run audit script
+        run: |
+          if [ -f audit_layout.py ]; then
+            python audit_layout.py
+          else
+            echo "audit_layout.py not found!"
+            exit 1
+          fi
+
+      # Package the site into a zip (assumes you have a packaging script)
+      - name: Package site
+        run: |
+          # Use your PowerShell or Python packaging script here
+          if [ -f scripts/package_site.ps1 ]; then
+            pwsh -File scripts/package_site.ps1
+          elif [ -f scripts/package_site.py ]; then
+            python scripts/package_site.py
+          else
+            echo "No packaging script found."
+          fi
+
+      # Upload the packaged site as an artifact
+      - name: Upload packaged site
+        uses: actions/upload-artifact@v4
+        with:
+          name: site-package
+          path: dist/
