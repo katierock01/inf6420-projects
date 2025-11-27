@@ -1,73 +1,86 @@
-# INF 6420 – Projects Hub
+# INF 6420 – Projects Hub
 
-Course site and sources for INF 6420 by Katie Rock. This repo mirrors your student web space (WSU) but does not replace it. WSU URLs remain the source of truth for grading.
+Welcome to the **INF 6420 Projects Hub**. This repository holds the source files for all your INF 6420 assignments. It mirrors the directory structure you will maintain on the WSU server, but it does **not** replace that server—your WSU URLs remain the official grading links. Use this repo to develop, audit, and package your work before uploading.
 
-## Live WSU URLs
+## 🌐 Live WSU URLs
 
-- Hub: http://141.217.120.86/fn9575/html/inf6420-projects/index.html
-- Project 2.2: http://141.217.120.86/fn9575/html/inf6420-projects/project2.2/rock-project2-2.html
-- Project 1.1 (links to 2.1 DOCX): http://141.217.120.86/fn9575/html/inf6420-projects/rock-Project1.1/rock-Project1.1.index.html
-- Direct Project 2.1 DOCX (optional): http://141.217.120.86/fn9575/html/inf6420-projects/rock-Project2.1/rock-project2.1.docx
+After you upload via SFTP/OwlFiles to `/home/fn9575/html/`, your projects will live here:
 
-Validators (for 2.2):
-- HTML: https://validator.w3.org/nu/?doc=http%3A%2F%2F141.217.120.86%2Ffn9575%2Fhtml%2Finf6420-projects%2Fproject2.2%2Frock-project2-2.html
-- CSS:  https://jigsaw.w3.org/css-validator/validator?uri=http%3A%2F%2F141.217.120.86%2Ffn9575%2Fhtml%2Finf6420-projects%2Fproject2.2%2Frock-project2-2.html
+- **Course home (Project 1):**  
+  [`http://141.217.120.86/fn9575/html/rock-INF6420-index.html`](http://141.217.120.86/fn9575/html/rock-INF6420-index.html)
+- **Project 2.1 (DOCX):**  
+  [`http://141.217.120.86/fn9575/html/inf6420-projects/rock-project2.1.docx`](http://141.217.120.86/fn9575/html/inf6420-projects/rock-project2.1.docx)
+- **Project 2.2 (HTML):**  
+  [`http://141.217.120.86/fn9575/html/inf6420-projects/rock-project2-2.html`](http://141.217.120.86/fn9575/html/inf6420-projects/rock-project2-2.html)
+- **Project 3 (Squirrels site):**  
+  [`http://141.217.120.86/fn9575/html/inf6420-projects/project3/home.html`](http://141.217.120.86/fn9575/html/inf6420-projects/project3/home.html)
+- **Project 4 (Responsive redesign):**  
+  [`http://141.217.120.86/fn9575/html/inf6420-projects/project4/home.html`](http://141.217.120.86/fn9575/html/inf6420-projects/project4/home.html)
 
-The Project 2.2 page also includes dynamic validator links that adapt to whatever URL you open.
+Use these URLs in your documents. Do **not** link to old folder names such as `project1.1/` or `rock-Project2.3/`, which are deprecated.
 
-## Repo layout
+## 🗂 Canonical Repository Layout
 
-- `index.html` – Projects hub
-- `submission.html` – Grader-friendly links and validators
-- `docs/` – Assignment docs hub and helper text
-- `images/`, `styles/` – Shared assets
-- `rock-Project1.1/` – Project 1.1 page (links to 2.1 DOCX and 2.2)
-- `rock-Project2.1/` – Landing + embedded doc scaffold; keep the DOCX outside of Git
-- `project2.2/` – Final 2.2 HTML with internal CSS and validators
-- `project3/` – Multi-page squirrels site with shared CSS and PHP form handler
-- `scripts/` – Deployment and packaging helpers
+Your local repo (and your WSU server directory) should follow this layout exactly:
 
-Large binaries are excluded by default; `.gitignore` includes `*.docx`.
+```
+rock-INF6420-index.html        # Course homepage (Project 1)
+img/                           # Your photo and shared images
+inf6420-projects/
+├ rock-project2.1.docx         # Project 2.1 paper
+├ rock-project2-2.html         # Project 2.2 HTML/CSS version
+├ project3/                    # Project 3: Squirrels site
+│  ├ home.html, fox.html, red.html, gray.html, flying.html
+│  ├ squirrels.css
+│  ├ showform.php (if used)
+│  └ images/
+│      ├ home.jpg, fox.jpg, red.jpg, gray.jpg, flying.jpg
+└ project4/                    # Project 4: Responsive redesign
+   ├ home.html, fox.html, red.html, gray.html, flying.html
+   ├ squirrels-responsive.css  # CSS with media queries
+   └ images/
+       ├ home.jpg, fox.jpg, red.jpg, gray.jpg, flying.jpg
+scripts/                       # Deployment and packaging helpers
+docs/                          # Assignment PDFs and rubric notes
+styles/, images/               # Shared assets (e.g. brand.css)
+README.md, submission.html     # This README and grader-friendly links/validators
+```
 
-## Deploy to WSU (SFTP)
+Legacy directories (e.g. `project1.1/`, `project2.1/`, `project2.2/`, `project3/` duplicates, or `rock-Project2.3/`) should be removed or renamed with `-old` after you merge their contents into the canonical structure.
 
-Prereqs: WSU VPN (if required), port 22 open. Your server is HTTP-only.
+## 🛠 Development & Deployment Workflow
 
-Option A — PowerShell (WinSCP or OpenSSH):
-1. Open Windows PowerShell.
-2. Run the deploy script:
-   - If WinSCP is installed, it will be used automatically; otherwise OpenSSH `sftp` is used.
-3. Accept the host key and enter your password when prompted.
+1. **Develop locally** – Edit your HTML, CSS and PHP files in `inf6420-projects/` and the course homepage (`rock-INF6420-index.html`). Keep your DOCX file out of version control if you prefer; the `.gitignore` excludes `*.docx` except for `rock-project2.1.docx`.
+2. **Audit & organise** – Use a Python audit script (e.g. `python audit_layout.py`) to check for missing or misplaced files. Run a cleanup script (e.g. `python cleanup_inf6420.py`) to move everything into the canonical layout and rename legacy folders.
+3. **Commit & push** – When your repo passes the audit, stage and commit your changes:
+   ```bash
+   git add -A
+   git commit -m "Restructure to canonical layout and archive old folders"
+   git push origin main
+   ```
+4. **Deploy via SFTP** – Connect to WSU VPN (GlobalProtect) and use WinSCP or OwlFiles to upload `rock-INF6420-index.html`, the `img/` folder, and `inf6420-projects/` to `/home/fn9575/html/`. Rename old server directories like `project3` or `project4` to `project3-old`/`project4-old` before uploading.
+5. **Validate** – After deployment, test each page at the URLs above. Run the W3C HTML and CSS validators and replace placeholder validator links with the real results.
 
-Option B — Python (Paramiko/OpenSSH fallback):
-1. Ensure Python 3 is installed. Optionally install `paramiko` for password-based SFTP.
-2. Run `scripts/upload_22.py` and follow prompts (will fallback to system `sftp` if Paramiko isn’t available).
+## 🔒 Security & Backups
 
-Notes:
-- If port 22 is blocked on your network, connect to WSU VPN or use a different network (e.g., mobile hotspot).
-- Linux paths on the server are case-sensitive.
+Do not store your WSU credentials in the repository. Use environment variables or enter credentials manually when uploading via SFTP. Back up your `inf6420-projects/` folder to OneDrive and Google Drive after each milestone to protect against data loss.
 
-## Package the site (ZIP for submission)
+## 📦 Packaging
 
-Use the PowerShell script to create a distributable ZIP under `dist/`:
-- `scripts/package_site.ps1`
+To create a ZIP for submission, run the packaging script under `scripts/` (e.g. `scripts/package_site.ps1`) which bundles your course homepage, projects, docs, assets and scripts into a single archive. Save the ZIP in `dist/`.
 
-This bundles the hub, projects, docs, assets, and scripts.
+## 🧶 Optional: GitHub Pages
 
-## Optional: GitHub Pages
+This repo includes a `.nojekyll` file so static assets serve correctly. To publish a copy via GitHub Pages:
 
-This repo includes a `.nojekyll` file so static assets serve correctly. To enable Pages:
-1. In GitHub, go to Settings → Pages.
-2. Source: choose `main` branch and `/ (root)`.
+1. Go to *Settings → Pages* in your repository.
+2. Choose `main` branch and `/ (root)` as the source.
 3. Save. Your site will publish at `https://<your-username>.github.io/inf6420-projects/`.
 
-Important: Your official grading URLs remain the WSU-hosted HTTP links above.
+Important: your official grading URLs remain the WSU-hosted HTTP links above.
 
-## Accessibility & validation
+By following this structure and workflow, you will have a clean, rubric‑compliant repository for INF 6420. Use the included scripts to audit and reorganize your files, commit and push regularly, and deploy to the WSU server for grading.
 
-- Strong keyboard focus styles, skip link, and semantic landmarks are included.
-- `rock-Project2.2/rock-project2-2.html` uses internal CSS by design and includes dynamic validator links.
-- `@media (prefers-reduced-motion: reduce)` and print styles are present.
 
 ## Troubleshooting
 
