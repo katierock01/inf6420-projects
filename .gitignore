@@ -24,9 +24,17 @@ yarn-error.log*
 *.swp
 *.swo
 *~
+.vscode-test/
+*.vsix
+
+# Build/Distribution
+out/
+dist/
+build/
 
 # OS
 .DS_Store
+.DS_store
 Thumbs.db
 
 C:/Users/k8roc/inf6420-projects/.venv/Scripts/python.exe C:\Users\k8roc\inf6420-projects\deploy-ai.py
