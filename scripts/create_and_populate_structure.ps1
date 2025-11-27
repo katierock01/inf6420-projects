@@ -1,3 +1,21 @@
+
+# PowerShell script to create the directory structure and populate files with complete content
+# Run from the root: C:\Users\k8roc\source\repos\inf6420-projects
+
+# Create directories
+New-Item -ItemType Directory -Force -Path "img"
+New-Item -ItemType Directory -Force -Path "inf6420-projects"
+New-Item -ItemType Directory -Force -Path "inf6420-projects/project3"
+New-Item -ItemType Directory -Force -Path "inf6420-projects/project3/images"
+New-Item -ItemType Directory -Force -Path "inf6420-projects/project4"
+New-Item -ItemType Directory -Force -Path "inf6420-projects/project4/images"
+New-Item -ItemType Directory -Force -Path "scripts"
+New-Item -ItemType Directory -Force -Path "docs"
+New-Item -ItemType Directory -Force -Path "styles"
+New-Item -ItemType Directory -Force -Path "images"
+
+# Populate files with content (using here-strings for multi-line)
+@"
 # Enhanced PowerShell script to create and consolidate the INF6420 project structure
 # Run from the root: C:\Users\k8roc\source\repos\inf6420-projects
 # This script consolidates existing files, creates missing directories/files, and populates content
@@ -144,6 +162,11 @@ $content = @"
     </footer>
 </body>
 </html>
+"@ | Out-File -FilePath "rock-INF6420-index.html" -Encoding UTF8
+
+# Note: rock-project2.1.docx is a Word document; create manually or use a template
+
+@"
 "@
 Create-FileWithContent -Path "rock-INF6420-index.html" -Content $content
 
@@ -170,6 +193,10 @@ $content = @"
     </footer>
 </body>
 </html>
+"@ | Out-File -FilePath "inf6420-projects/rock-project2-2.html" -Encoding UTF8
+
+# Project 3 files
+@"
 "@
 Create-FileWithContent -Path "inf6420-projects\rock-project2-2.html" -Content $content
 
@@ -197,6 +224,9 @@ main img {
     max-width: 100%;
     height: auto;
 }
+"@ | Out-File -FilePath "inf6420-projects/project3/squirrels.css" -Encoding UTF8
+
+@"
 "@
 Create-FileWithContent -Path "inf6420-projects\project3\squirrels.css" -Content $content
 
@@ -224,6 +254,9 @@ $content = @"
     </main>
 </body>
 </html>
+"@ | Out-File -FilePath "inf6420-projects/project3/home.html" -Encoding UTF8
+
+@"
 "@
 Create-FileWithContent -Path "inf6420-projects\project3\home.html" -Content $content
 
@@ -254,6 +287,11 @@ $content = @"
     </main>
 </body>
 </html>
+"@ | Out-File -FilePath "inf6420-projects/project3/fox.html" -Encoding UTF8
+
+# Similar for red.html, gray.html, flying.html - repeat pattern with unique content
+
+@"
 "@
 Create-FileWithContent -Path "inf6420-projects\project3\fox.html" -Content $content
 
@@ -283,10 +321,9 @@ $content = @"
     </main>
 </body>
 </html>
-"@
-Create-FileWithContent -Path "inf6420-projects\project3\red.html" -Content $content
+"@ | Out-File -FilePath "inf6420-projects/project3/red.html" -Encoding UTF8
 
-$content = @"
+@"
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -310,10 +347,9 @@ $content = @"
     </main>
 </body>
 </html>
-"@
-Create-FileWithContent -Path "inf6420-projects\project3\gray.html" -Content $content
+"@ | Out-File -FilePath "inf6420-projects/project3/gray.html" -Encoding UTF8
 
-$content = @"
+@"
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -337,10 +373,9 @@ $content = @"
     </main>
 </body>
 </html>
-"@
-Create-FileWithContent -Path "inf6420-projects\project3\flying.html" -Content $content
+"@ | Out-File -FilePath "inf6420-projects/project3/flying.html" -Encoding UTF8
 
-$content = @"
+@"
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     echo "<h1>Form Submission</h1><table border='1'>";
@@ -352,11 +387,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     echo "<p>No form data submitted.</p>";
 }
 ?>
-"@
-Create-FileWithContent -Path "inf6420-projects\project3\showform.php" -Content $content
+"@ | Out-File -FilePath "inf6420-projects/project3/showform.php" -Encoding UTF8
 
-# Project 4 - similar to project3 but responsive
-$content = @"
+# Project 4 files - similar to project3 but with responsive CSS
+@"
 @import url("../../styles/brand.css");
 
 body {
@@ -389,11 +423,10 @@ main img {
         padding: 10px;
     }
 }
-"@
-Create-FileWithContent -Path "inf6420-projects\project4\squirrels-responsive.css" -Content $content
+"@ | Out-File -FilePath "inf6420-projects/project4/squirrels-responsive.css" -Encoding UTF8
 
-# Home for project4
-$content = @"
+# Home for project4 - similar structure
+@"
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -417,12 +450,11 @@ $content = @"
     </main>
 </body>
 </html>
-"@
-Create-FileWithContent -Path "inf6420-projects\project4\home.html" -Content $content
+"@ | Out-File -FilePath "inf6420-projects/project4/home.html" -Encoding UTF8
 
-# Similar for other project4 HTML files
+# Repeat for fox.html, red.html, gray.html, flying.html in project4 with same content but responsive CSS
 
-$content = @"
+@"
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -446,12 +478,11 @@ $content = @"
     </main>
 </body>
 </html>
-"@
-Create-FileWithContent -Path "inf6420-projects\project4\fox.html" -Content $content
+"@ | Out-File -FilePath "inf6420-projects/project4/fox.html" -Encoding UTF8
 
-# Repeat for red, gray, flying
+# Similar for red, gray, flying
 
-$content = @"
+@"
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -475,10 +506,9 @@ $content = @"
     </main>
 </body>
 </html>
-"@
-Create-FileWithContent -Path "inf6420-projects\project4\red.html" -Content $content
+"@ | Out-File -FilePath "inf6420-projects/project4/red.html" -Encoding UTF8
 
-$content = @"
+@"
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -502,10 +532,9 @@ $content = @"
     </main>
 </body>
 </html>
-"@
-Create-FileWithContent -Path "inf6420-projects\project4\gray.html" -Content $content
+"@ | Out-File -FilePath "inf6420-projects/project4/gray.html" -Encoding UTF8
 
-$content = @"
+@"
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -529,11 +558,10 @@ $content = @"
     </main>
 </body>
 </html>
-"@
-Create-FileWithContent -Path "inf6420-projects\project4\flying.html" -Content $content
+"@ | Out-File -FilePath "inf6420-projects/project4/flying.html" -Encoding UTF8
 
-# styles/brand.css
-$content = @"
+# Styles/brand.css
+@"
 :root {
     --primary-accent: #083B55;
     --secondary-accent: #0A4A6B;
@@ -576,11 +604,10 @@ a:hover {
         transition-duration: 0.01ms !important;
     }
 }
-"@
-Create-FileWithContent -Path "styles\brand.css" -Content $content
+"@ | Out-File -FilePath "styles/brand.css" -Encoding UTF8
 
 # README.md
-$content = @"
+@"
 # INF6420 Projects
 
 Portfolio of web development projects for INF6420.
@@ -595,12 +622,11 @@ http://141.217.120.86/fn9575/html/inf6420-projects/
 - Project 4: Responsive Redesign
 
 ## Deployment
-Use scripts/deploy.ps1 (PowerShell) or scripts/upload_22.py (Python) to upload to WSU server.
-"@
-Create-FileWithContent -Path "README.md" -Content $content
+Use scripts/deploy.ps1 or scripts/upload_22.py to upload to WSU server.
+"@ | Out-File -FilePath "README.md" -Encoding UTF8
 
-# submission.html
-$content = @"
+# Submission.html
+@"
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -617,11 +643,10 @@ $content = @"
     </ul>
 </body>
 </html>
-"@
-Create-FileWithContent -Path "submission.html" -Content $content
+"@ | Out-File -FilePath "submission.html" -Encoding UTF8
 
-# Scripts - deploy.ps1
-$content = @"
+# Scripts
+@"
 # deploy.ps1 - SFTP upload to WSU server
 # Requires Posh-SSH module: Install-Module -Name Posh-SSH
 
@@ -631,17 +656,15 @@ param(
     [string]$RemotePath = "/html/inf6420-projects/"
 )
 
-`$Password = Read-Host -AsSecureString "Enter password"
-`$Credential = New-Object System.Management.Automation.PSCredential (`$Username, `$Password)
+$Password = Read-Host -AsSecureString "Enter password"
+$Credential = New-Object System.Management.Automation.PSCredential ($Username, $Password)
 
-`$Session = New-SFTPSession -ComputerName `$Server -Credential `$Credential
-Set-SFTPItem -SessionId `$Session.SessionId -Path "." -Destination `$RemotePath -Recurse
-Remove-SFTPSession -SessionId `$Session.SessionId
-"@
-Create-FileWithContent -Path "scripts\deploy.ps1" -Content $content
+$Session = New-SFTPSession -ComputerName $Server -Credential $Credential
+Set-SFTPItem -SessionId $Session.SessionId -Path "." -Destination $RemotePath -Recurse
+Remove-SFTPSession -SessionId $Session.SessionId
+"@ | Out-File -FilePath "scripts/deploy.ps1" -Encoding UTF8
 
-# upload_22.py
-$content = @"
+@"
 # upload_22.py - Python SFTP upload
 import paramiko
 import os
@@ -664,14 +687,11 @@ for root, dirs, files in os.walk('.'):
 
 sftp.close()
 transport.close()
-"@
-Create-FileWithContent -Path "scripts\upload_22.py" -Content $content
+"@ | Out-File -FilePath "scripts/upload_22.py" -Encoding UTF8
 
-# package_site.ps1
-$content = @"
+@"
 # package_site.ps1 - Create ZIP for submission
 Compress-Archive -Path "." -DestinationPath "dist/inf6420-projects.zip" -Force
-"@
-Create-FileWithContent -Path "scripts\package_site.ps1" -Content $content
+"@ | Out-File -FilePath "scripts/package_site.ps1" -Encoding UTF8
 
-Write-Log "INF6420 project structure consolidation and population completed. Add images manually to image folders."
+Write-Host "Structure created and files populated. Add images manually to image folders."
