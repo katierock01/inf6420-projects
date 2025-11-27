@@ -10,7 +10,7 @@ from pathlib import Path
 from getpass import getpass
 
 HOST = "141.217.120.86"
-USER = "fn9575"
+USER = "fn9576"
 PORT = 22
 REMOTE_BASE = f"/home/{USER}/html/inf6420-projects"
 

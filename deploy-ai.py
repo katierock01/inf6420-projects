@@ -13,8 +13,8 @@ from getpass import getpass
 
 # Configuration
 WSU_HOST = "141.217.120.86"
-WSU_USER = "fn9575"
-WSU_REMOTE_BASE = "/home/fn9575/html/inf6420-projects"
+WSU_USER = "fn9576"
+WSU_REMOTE_BASE = "/home/fn9576/html/inf6420-projects"
 GITHUB_REPO = "https://github.com/katierock01/inf6420-projects.git"
 
 class Colors:
