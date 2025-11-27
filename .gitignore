@@ -28,3 +28,5 @@ yarn-error.log*
 # OS
 .DS_Store
 Thumbs.db
+
+C:/Users/k8roc/inf6420-projects/.venv/Scripts/python.exe C:\Users\k8roc\inf6420-projects\deploy-ai.py
