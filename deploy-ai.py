@@ -196,9 +196,10 @@ def upload_to_wsu(project_root):
     print_info(f"Connecting to {WSU_USER}@{WSU_HOST}...")
     print_info("You'll be prompted for your WSU password")
     
-    # Run SFTP
+    # Run SFTP interactively (allows password prompt)
     cmd = f'sftp -o StrictHostKeyChecking=accept-new -b "{batch_file}" {WSU_USER}@{WSU_HOST}'
-    success, _ = run_command(cmd, cwd=project_root, check=False)
+    result = subprocess.run(cmd, shell=True, cwd=project_root)
+    success = result.returncode == 0
     
     # Clean up
     try:
