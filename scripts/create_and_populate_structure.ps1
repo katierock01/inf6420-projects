@@ -16,6 +16,92 @@ New-Item -ItemType Directory -Force -Path "images"
 
 # Populate files with content (using here-strings for multi-line)
 @"
+# Enhanced PowerShell script to create and consolidate the INF6420 project structure
+# Run from the root: C:\Users\k8roc\source\repos\inf6420-projects
+# This script consolidates existing files, creates missing directories/files, and populates content
+
+param(
+    [switch]$Force  # Overwrite existing files
+)
+
+function Write-Log {
+    param([string]$Message)
+    Write-Host "[$(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')] $Message"
+}
+
+function Ensure-Directory {
+    param([string]$Path)
+    if (-not (Test-Path $Path)) {
+        New-Item -ItemType Directory -Path $Path -Force | Out-Null
+        Write-Log "Created directory: $Path"
+    }
+}
+
+function Move-FileIfExists {
+    param([string]$Source, [string]$Destination)
+    if (Test-Path $Source) {
+        if (Test-Path $Destination) {
+            if ($Force) {
+                Move-Item -Path $Source -Destination $Destination -Force
+                Write-Log "Overwrote and moved $Source to $Destination"
+            } else {
+                Write-Log "Skipped moving $Source to $Destination (destination exists, use -Force to overwrite)"
+            }
+        } else {
+            Move-Item -Path $Source -Destination $Destination
+            Write-Log "Moved $Source to $Destination"
+        }
+    }
+}
+
+function Create-FileWithContent {
+    param([string]$Path, [string]$Content)
+    if (-not (Test-Path $Path) -or $Force) {
+        $Content | Out-File -FilePath $Path -Encoding UTF8 -Force
+        Write-Log "Created/updated file: $Path"
+    } else {
+        Write-Log "Skipped creating $Path (file exists, use -Force to overwrite)"
+    }
+}
+
+Write-Log "Starting INF6420 project structure consolidation and population"
+
+# Consolidate existing files
+# Move project3/ to inf6420-projects/project3/ if it exists at root
+if (Test-Path "project3") {
+    Move-FileIfExists -Source "project3" -Destination "inf6420-projects\project3"
+}
+
+# Similarly for project4
+if (Test-Path "project4") {
+    Move-FileIfExists -Source "project4" -Destination "inf6420-projects\project4"
+}
+
+# Move scripts/ to inf6420-projects/scripts/ if needed, but check
+# Assuming scripts/ at root should stay, but if inf6420-projects/scripts/ exists, merge or something
+# For now, ensure scripts/ at root
+
+# Create directories
+$directories = @(
+    "img",
+    "inf6420-projects",
+    "inf6420-projects\project3",
+    "inf6420-projects\project3\images",
+    "inf6420-projects\project4",
+    "inf6420-projects\project4\images",
+    "scripts",
+    "docs",
+    "styles",
+    "images"
+)
+
+foreach ($dir in $directories) {
+    Ensure-Directory -Path $dir
+}
+
+# Populate files with content (using here-strings)
+# rock-INF6420-index.html
+$content = @"
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -81,6 +167,12 @@ New-Item -ItemType Directory -Force -Path "images"
 # Note: rock-project2.1.docx is a Word document; create manually or use a template
 
 @"
+"@
+Create-FileWithContent -Path "rock-INF6420-index.html" -Content $content
+
+# Note: rock-project2.1.docx is a Word document; create manually or use a template
+
+$content = @"
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -105,6 +197,11 @@ New-Item -ItemType Directory -Force -Path "images"
 
 # Project 3 files
 @"
+"@
+Create-FileWithContent -Path "inf6420-projects\rock-project2-2.html" -Content $content
+
+# Project 3 files
+$content = @"
 @import url("../../styles/brand.css");
 
 body {
@@ -130,6 +227,10 @@ main img {
 "@ | Out-File -FilePath "inf6420-projects/project3/squirrels.css" -Encoding UTF8
 
 @"
+"@
+Create-FileWithContent -Path "inf6420-projects\project3\squirrels.css" -Content $content
+
+$content = @"
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -156,6 +257,13 @@ main img {
 "@ | Out-File -FilePath "inf6420-projects/project3/home.html" -Encoding UTF8
 
 @"
+"@
+Create-FileWithContent -Path "inf6420-projects\project3\home.html" -Content $content
+
+# Similar for other project3 HTML files - fox.html, red.html, gray.html, flying.html
+# For brevity, only home.html shown; repeat pattern for others
+
+$content = @"
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -184,6 +292,12 @@ main img {
 # Similar for red.html, gray.html, flying.html - repeat pattern with unique content
 
 @"
+"@
+Create-FileWithContent -Path "inf6420-projects\project3\fox.html" -Content $content
+
+# Repeat for red.html, gray.html, flying.html with appropriate titles and content
+
+$content = @"
 <!DOCTYPE html>
 <html lang="en">
 <head>
