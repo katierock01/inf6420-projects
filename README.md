@@ -32,9 +32,8 @@ scripts/                       # Deployment tools
 
 ## 🚀 Quick Start
 
-1. **Clone:** `git clone https://github.com/katierock01/inf6420-projects.git`
-2. **View locally:** Open `index.html` in your browser
-3. **Edit directly:** No build tools required
+1. **View locally:** Open `index.html` in your browser
+2. **Edit directly:** No build tools required
 
 ## 📤 Deployment to WSU Server
 
@@ -54,7 +53,7 @@ python scripts/upload_22.py
 ```bash
 python deploy-ai.py
 ```
-*(Commits to GitHub + uploads to WSU, excludes `.git`, `.github`, `README.md`)*
+*(Automated deployment to WSU server)*
 
 **Note:** WSU paths are case-sensitive (Linux)
 
@@ -96,8 +95,11 @@ Output: `dist/inf6420-projects.zip`
 
 - Project Status: `PROJECT-STATUS.md`
 - WSU URLs: `docs/SERVER-URLS.txt`
-- Setup Guide: `GITHUB_PROJECT_SETUP.md`
 
 ## 📬 Contact
 
-For questions, contact your instructor or open an issue.
+For questions, contact your instructor.
+
+---
+
+© 2025 Katie Rock – INF 6420 Web Development and Scripting
