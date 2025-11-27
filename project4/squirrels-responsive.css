@@ -29,7 +29,7 @@ body {
 }
 
 #header {
-	background: #083B55;
+	background: #115740; /* WSU green */
 	color: #ffffff;
 	padding: 20px 25px;
 }
@@ -55,14 +55,14 @@ body {
 }
 
 #navigation a {
-	color: #083B55;
+	color: #115740;
 	text-decoration: none;
 	font-weight: 600;
 }
 
 #navigation a:hover {
 	text-decoration: underline;
-	color: #FF6B63;
+	color: #1a6e52;
 }
 
 #maincontent {
@@ -76,7 +76,7 @@ body {
 
 #footer {
 	clear: both;
-	background: #0D5A7F;
+	background: #0d4230; /* WSU dark green */
 	color: #ffffff;
 	padding: 15px 25px;
 	font-style: italic;
@@ -108,7 +108,7 @@ h2 {
 	font-size: 1.9em;
 	margin: 0.5em 0;
 	text-align: center;
-	color: #083B55;
+	color: #115740;
 }
 
 h3 {
@@ -116,7 +116,7 @@ h3 {
 	font-size: 1.5em;
 	margin: 0.5em 0;
 	text-align: center;
-	color: #083B55;
+	color: #115740;
 }
 
 p {

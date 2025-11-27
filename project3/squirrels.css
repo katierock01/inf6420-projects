@@ -11,7 +11,7 @@ html, body {
 body {
 	font-family: 'Open Sans', Arial, sans-serif;
 	font-size: 18px; /* Increased from 16px for better readability at 100% */
-	background: #E8F2F7; /* EmpathTech background */
+	background: #E8F2F7;
 	color: #414B5C;
 	line-height: 1.6; /* maintain readability */
 }
@@ -26,7 +26,7 @@ body {
 }
 
 #header {
-	background: #083B55; /* EmpathTech primary color */
+	background: #115740; /* WSU green */
 	color: #ffffff;
 	padding: 20px 25px; /* Increased padding */
 }
@@ -41,8 +41,8 @@ body {
 }
 #navigation ul { list-style: none; margin: 0; padding: 0; }
 #navigation li { margin: 25px 0; font-size: 1.05em; } /* Increased spacing and size */
-#navigation a { color: #083B55; text-decoration: none; font-weight: 600; }
-#navigation a:hover { text-decoration: underline; color: #FF6B63; }
+#navigation a { color: #115740; text-decoration: none; font-weight: 600; }
+#navigation a:hover { text-decoration: underline; color: #1a6e52; }
 
 #maincontent {
 	float: left;
@@ -55,7 +55,7 @@ body {
 
 #footer {
 	clear: both;
-	background: #0D5A7F;
+	background: #0d4230; /* WSU dark green */
 	color: #ffffff;
 	padding: 15px 25px; /* Increased padding */
 	font-style: italic; /* footer in italics */
@@ -75,8 +75,8 @@ body {
 
 /* Typography */
 h1 { font-family: Georgia, 'Times New Roman', serif; font-size: 2.4em; margin: 0.4em 0; text-align: center; color: #ffffff; } /* Serif font, larger */
-h2 { font-family: Georgia, 'Times New Roman', serif; font-size: 1.9em; margin: 0.5em 0; text-align: center; color: #083B55; } /* Serif font, larger */
-h3 { font-family: Georgia, 'Times New Roman', serif; font-size: 1.5em; margin: 0.5em 0; text-align: center; color: #083B55; } /* Serif font, larger */
+h2 { font-family: Georgia, 'Times New Roman', serif; font-size: 1.9em; margin: 0.5em 0; text-align: center; color: #115740; } /* Serif font, larger */
+h3 { font-family: Georgia, 'Times New Roman', serif; font-size: 1.5em; margin: 0.5em 0; text-align: center; color: #115740; } /* Serif font, larger */
 p { margin: 1em 0; font-size: 1em; line-height: 1.7; } /* Better spacing and line height */
 
 /* Images inside main content if any */

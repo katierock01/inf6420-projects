@@ -1,0 +1,198 @@
+name: Site Audit
+
+on:
+  pull_request:
+    branches: [ main, inf6420-project ]
+    paths:
+      - '**.html'
+      - '**.css'
+      - 'styles/**'
+      - 'css/**'
+  workflow_dispatch:
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install beautifulsoup4 lxml requests
+          
+      - name: Run color audit
+        id: color_audit
+        run: |
+          python << 'EOF'
+          import re
+          import json
+          from pathlib import Path
+          
+          # WSU approved color palette
+          WSU_COLORS = ['#115740', '#1a6e52', '#0d4230']
+          ALLOWED_NEUTRAL = ['#ffffff', '#fff', '#000000', '#000', '#222222', '#222', 
+                             '#333333', '#333', '#555555', '#555', '#5a5a5a',
+                             '#e8f2f7', '#f9fafb', '#eaeaea', '#e5eee8', '#d0d0d0',
+                             '#2b90ff', '#f1fff7', '#e9ffef']
+          
+          issues = []
+          color_pattern = re.compile(r'#[0-9a-fA-F]{6}|#[0-9a-fA-F]{3}(?![0-9a-fA-F])')
+          
+          # Check HTML and CSS files
+          for file_path in Path('.').rglob('*.html'):
+              if '.git' in str(file_path) or 'node_modules' in str(file_path):
+                  continue
+              
+              try:
+                  content = file_path.read_text(encoding='utf-8')
+                  colors = color_pattern.findall(content)
+                  
+                  for color in colors:
+                      normalized = color.lower()
+                      if normalized not in [c.lower() for c in WSU_COLORS + ALLOWED_NEUTRAL]:
+                          issues.append({
+                              'file': str(file_path),
+                              'color': color,
+                              'message': f'Non-WSU color {color} found'
+                          })
+              except Exception as e:
+                  print(f"Error reading {file_path}: {e}")
+          
+          for file_path in Path('.').rglob('*.css'):
+              if '.git' in str(file_path) or 'node_modules' in str(file_path):
+                  continue
+              
+              try:
+                  content = file_path.read_text(encoding='utf-8')
+                  colors = color_pattern.findall(content)
+                  
+                  for color in colors:
+                      normalized = color.lower()
+                      if normalized not in [c.lower() for c in WSU_COLORS + ALLOWED_NEUTRAL]:
+                          issues.append({
+                              'file': str(file_path),
+                              'color': color,
+                              'message': f'Non-WSU color {color} found'
+                          })
+              except Exception as e:
+                  print(f"Error reading {file_path}: {e}")
+          
+          # Output results
+          if issues:
+              print(f"❌ Found {len(issues)} color inconsistencies:")
+              for issue in issues[:10]:  # Show first 10
+                  print(f"  - {issue['file']}: {issue['color']}")
+              
+              with open('color_audit.json', 'w') as f:
+                  json.dump(issues, f, indent=2)
+              
+              exit(1)
+          else:
+              print("✅ All colors match WSU palette!")
+          EOF
+          
+      - name: Check for broken links
+        id: link_check
+        continue-on-error: true
+        run: |
+          python << 'EOF'
+          import re
+          from pathlib import Path
+          
+          broken_links = []
+          
+          for html_file in Path('.').rglob('*.html'):
+              if '.git' in str(html_file) or 'node_modules' in str(html_file):
+                  continue
+              
+              try:
+                  content = html_file.read_text(encoding='utf-8')
+                  
+                  # Find href links
+                  href_pattern = re.compile(r'href=["\']([^"\']+)["\']')
+                  links = href_pattern.findall(content)
+                  
+                  for link in links:
+                      # Skip external links and anchors
+                      if link.startswith(('http://', 'https://', 'mailto:', '#', 'javascript:')):
+                          continue
+                      
+                      # Resolve relative path
+                      if link.startswith('/'):
+                          target = Path('.' + link)
+                      else:
+                          target = (html_file.parent / link).resolve()
+                      
+                      # Check if file exists
+                      if not target.exists():
+                          broken_links.append({
+                              'source': str(html_file),
+                              'link': link,
+                              'message': f'Broken link: {link}'
+                          })
+              except Exception as e:
+                  print(f"Error checking {html_file}: {e}")
+          
+          if broken_links:
+              print(f"⚠️ Found {len(broken_links)} potentially broken links:")
+              for link in broken_links[:10]:
+                  print(f"  - {link['source']}: {link['link']}")
+          else:
+              print("✅ No broken internal links detected!")
+          EOF
+          
+      - name: Upload audit results
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: audit-results
+          path: |
+            color_audit.json
+          retention-days: 30
+          
+      - name: Comment on PR
+        if: failure() && github.event_name == 'pull_request'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            let comment = '## 🔍 Site Audit Results\n\n';
+            
+            try {
+              const colorAudit = JSON.parse(fs.readFileSync('color_audit.json', 'utf8'));
+              comment += `### ❌ Color Inconsistencies (${colorAudit.length} found)\n\n`;
+              comment += 'The following non-WSU colors were detected:\n\n';
+              comment += '| File | Color | Issue |\n';
+              comment += '|------|-------|-------|\n';
+              
+              colorAudit.slice(0, 20).forEach(issue => {
+                comment += `| \`${issue.file}\` | ${issue.color} | ${issue.message} |\n`;
+              });
+              
+              if (colorAudit.length > 20) {
+                comment += `\n*...and ${colorAudit.length - 20} more issues*\n`;
+              }
+              
+              comment += '\n**Approved WSU Colors:**\n';
+              comment += '- Primary: `#115740`\n';
+              comment += '- Lighter: `#1a6e52`\n';
+              comment += '- Darker: `#0d4230`\n';
+              
+            } catch (e) {
+              comment += '✅ No color issues found\n';
+            }
+            
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: comment
+            });

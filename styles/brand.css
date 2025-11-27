@@ -5,29 +5,24 @@
 */
 
 :root {
-  /* EmpathTech palette */
-  --et-navy: #004E7C;
-  --et-deep-navy: #00386E;
-  --et-mid-blue: #345A81;
-  --et-ocean: #054B75;
-  --et-coral: #D89B9D;
-  --et-slate: #7C7790;
+  /* WSU Green palette */  
+  --wsu-green-1: #115740;   /* Primary WSU green */
+  --wsu-green-2: #1a6e52;   /* Lighter shade */
+  --wsu-green-3: #0d4230;   /* Darker shade */
   --white: #FFFFFF;
-  /* Optional bridge */
-  --wsu-green: #115740;
 
   /* Surface + typography */
   --ink: #111111;
   --ink-2: #333333;
   --line: #EAEAEA;
 
-  /* Base tokens (mapped to EmpathTech) */
+  /* Base tokens (mapped to WSU Green) */
   --text-color: var(--ink);
   --bg-color: #F9FAFB;
   --overlay-bg: rgba(255, 255, 255, 0.96);
-  --primary-accent: var(--et-navy);   /* headings, borders, buttons */
-  --link-color: var(--et-mid-blue);
-  --link-hover: var(--et-deep-navy);
+  --primary-accent: var(--wsu-green-1);   /* headings, borders, buttons */
+  --link-color: var(--wsu-green-1);
+  --link-hover: var(--wsu-green-2);
 
   /* Extended system tokens */
   --muted: #5a5a5a;
@@ -79,20 +74,20 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-serif); color: var(--primary-ac
 a { color: var(--link-color); text-decoration: underline; text-underline-offset: 2px; text-decoration-thickness: 1.5px; }
 a:hover { color: var(--link-hover); }
 
-/* Optional EmpathTech components (use on pages that opt-in) */
-.topbar { display:flex; gap:16px; align-items:center; justify-content:space-between; padding:14px 20px; background: var(--et-navy); color:#fff; }
+/* WSU branded components */
+.topbar { display:flex; gap:16px; align-items:center; justify-content:space-between; padding:14px 20px; background: var(--wsu-green-1); color:#fff; }
 .brand { font-weight:800; letter-spacing:.2px; }
 .nav a { color:#fff; text-decoration:none; margin-right:16px; opacity:.95; }
 .nav a:hover { opacity:1; text-decoration:underline; }
 
 .btn { display:inline-block; padding:10px 14px; border-radius:10px; border:1px solid transparent; text-decoration:none; font-weight:600; }
 .btn.primary { background: var(--primary-accent); color:#fff; }
-.btn.secondary { background: var(--et-coral); color: var(--ink); }
+.btn.secondary { background: var(--wsu-green-2); color: #fff; }
 .btn.ghost { border-color: var(--link-color); color: var(--link-color); background: transparent; }
 
-.hero { padding:48px 20px; background: linear-gradient(135deg, var(--et-mid-blue), var(--et-deep-navy)); color:#fff; text-align:left; }
-.hero h1 { margin:0 0 8px 0; font-size:40px; letter-spacing:-.02em; }
-.hero p { margin:0 0 12px 0; opacity:.95; }
+.hero { padding:48px 20px; background: linear-gradient(135deg, var(--wsu-green-1), var(--wsu-green-2)); color:#fff; text-align:left; }
+.hero h1 { margin:0 0 8px 0; font-size:40px; letter-spacing:-.02em; color:#fff; }
+.hero p { margin:0 0 12px 0; opacity:.95; color:#f1fff7; }
 
 /* Cards and sections */
 .kr-card {
