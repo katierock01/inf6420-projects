@@ -1,0 +1,401 @@
+﻿# INF 6420 – Documentation Index
+
+> **Quick Navigation Guide**  
+> Start here to find the right documentation for your needs
+
+---
+
+## 🚀 Quick Navigation
+
+### ⚡ I'm in a hurry! (5-minute version)
+
+1. **Brand new to the project?**
+   - Read: `COMPLETE_PACKAGING_GUIDE.md` § Quick Start (5 Minutes)
+
+2. **Need to submit TODAY?**
+   - Check: `FILE_INVENTORY.md` to verify all files present
+   - Run: `scripts\validate_all.ps1`
+   - Deploy: `scripts\deploy.ps1` (requires VPN)
+
+3. **Got validation errors?**
+   - See: `COMPLETE_PACKAGING_GUIDE.md` § FAQs & Troubleshooting
+
+4. **Need file locations?**
+   - Check: `DIRECTORY_STRUCTURE.md` § Canonical Directory Structure
+
+---
+
+## 📚 Full Documentation Set
+
+### Primary Documents (Start Here)
+
+| Document | Purpose | Best For |
+|----------|---------|----------|
+| **[COMPLETE_PACKAGING_GUIDE.md](COMPLETE_PACKAGING_GUIDE.md)** | Master integration guide covering all projects and workflow | Overview, workflow planning, FAQs |
+| **[PROJECT_REQUIREMENTS.md](PROJECT_REQUIREMENTS.md)** | Detailed rubrics and technical requirements for each project | Understanding what's expected, grading criteria |
+| **[DIRECTORY_STRUCTURE.md](DIRECTORY_STRUCTURE.md)** | File organization, naming conventions, and canonical layout | Organizing files, finding where things go |
+| **[FILE_INVENTORY.md](FILE_INVENTORY.md)** | Status tracking template and submission checklist | Monitoring progress, pre-submission verification |
+| **[AUTOMATION_GUIDE.md](AUTOMATION_GUIDE.md)** | PowerShell scripts, Python utilities, and deployment instructions | Deploying to server, automation setup |
+
+### Supporting Files
+
+- **[README.md](../README.md)** – Repository overview and URLs
+- **[.github/copilot-instructions.md](../.github/copilot-instructions.md)** – GitHub Copilot indexing
+
+---
+
+## 🎯 Find Documentation by Task
+
+### Planning & Setup
+
+| Task | Document | Section |
+|------|----------|---------|
+| Getting started | COMPLETE_PACKAGING_GUIDE.md | Quick Start (5 Minutes) |
+| Understand all projects | PROJECT_REQUIREMENTS.md | Project Overview |
+| Organize my files | DIRECTORY_STRUCTURE.md | Canonical Directory Structure |
+| Create tracking sheet | FILE_INVENTORY.md | All sections |
+
+### Project-Specific Info
+
+| Project | Document | Section |
+|---------|----------|---------|
+| Project 1 (Homepage) | PROJECT_REQUIREMENTS.md | § Project 1: Course Homepage |
+| Project 2.1 (Research) | PROJECT_REQUIREMENTS.md | § Project 2.1: Research Paper |
+| Project 2.2 (HTML/CSS) | PROJECT_REQUIREMENTS.md | § Project 2.2: HTML/CSS Implementation |
+| Project 3 (Multi-page) | PROJECT_REQUIREMENTS.md | § Project 3: Multi-Page Site |
+| Project 4 (Responsive) | PROJECT_REQUIREMENTS.md | § Project 4: Responsive Redesign |
+
+### Development & Quality
+
+| Task | Document | Section |
+|------|----------|---------|
+| Workflow overview | COMPLETE_PACKAGING_GUIDE.md | Complete Workflow |
+| Accessibility guidelines | PROJECT_REQUIREMENTS.md | § Accessibility Standards |
+| Validation requirements | PROJECT_REQUIREMENTS.md | § Validation Requirements |
+| Quality assurance | COMPLETE_PACKAGING_GUIDE.md | Quality Assurance |
+| CSS best practices | PROJECT_REQUIREMENTS.md | § Project 2.2: HTML/CSS Implementation |
+
+### Deployment & Submission
+
+| Task | Document | Section |
+|------|----------|---------|
+| How to deploy | COMPLETE_PACKAGING_GUIDE.md | Deployment & Submission |
+| Script documentation | AUTOMATION_GUIDE.md | PowerShell Scripts |
+| Manual SFTP upload | AUTOMATION_GUIDE.md | SFTP Manual Deployment |
+| Pre-submission checklist | FILE_INVENTORY.md | Final Submission Checklist |
+| Troubleshooting deployment | AUTOMATION_GUIDE.md | Troubleshooting |
+
+### Troubleshooting
+
+| Issue | Document | Section |
+|-------|----------|---------|
+| Can't find files | DIRECTORY_STRUCTURE.md | Current vs Canonical Layout |
+| HTML validation errors | COMPLETE_PACKAGING_GUIDE.md | FAQs & Troubleshooting |
+| CSS problems | COMPLETE_PACKAGING_GUIDE.md | FAQs & Troubleshooting |
+| Deployment errors | AUTOMATION_GUIDE.md | Troubleshooting |
+| Mobile responsiveness | COMPLETE_PACKAGING_GUIDE.md | FAQs & Troubleshooting |
+
+---
+
+## 📖 Reading Order Recommendations
+
+### For Students Starting from Scratch
+
+```
+1. COMPLETE_PACKAGING_GUIDE.md (Quick Start section)
+   ↓ (Understand overall structure)
+2. PROJECT_REQUIREMENTS.md (Read your specific project section)
+   ↓ (Know the requirements)
+3. DIRECTORY_STRUCTURE.md (Canonical layout section)
+   ↓ (Organize your files)
+4. FILE_INVENTORY.md (Create your tracking sheet)
+   ↓ (Start tracking progress)
+5. Begin development!
+```
+
+### For Students with Existing Projects
+
+```
+1. DIRECTORY_STRUCTURE.md (Current vs Canonical section)
+   ↓ (Check if reorganization needed)
+2. FILE_INVENTORY.md (Fill in current status)
+   ↓ (Identify missing files)
+3. COMPLETE_PACKAGING_GUIDE.md (Workflow section)
+   ↓ (Follow best practices going forward)
+4. PROJECT_REQUIREMENTS.md (Reference as needed)
+   ↓ (Verify each requirement)
+```
+
+### For Students Ready to Deploy
+
+```
+1. FILE_INVENTORY.md (Submission Checklist)
+   ↓ (Verify everything complete)
+2. COMPLETE_PACKAGING_GUIDE.md (Quality Assurance section)
+   ↓ (Run validation checks)
+3. AUTOMATION_GUIDE.md (Deployment section)
+   ↓ (Choose your deployment method)
+4. Deploy and verify on live server
+```
+
+---
+
+## 🔍 Document Structure Overview
+
+```
+docs/
+├── COMPLETE_PACKAGING_GUIDE.md (THIS IS THE MAIN GUIDE)
+│   ├── Quick Start (5 Minutes)
+│   ├── Project Overview
+│   ├── Complete Workflow (Phases 1-4)
+│   ├── Project Details & Requirements (Summary tables)
+│   ├── Quality Assurance (Validation checklists)
+│   ├── Deployment & Submission (Step-by-step)
+│   └── FAQs & Troubleshooting
+│
+├── PROJECT_REQUIREMENTS.md (DETAILED REQUIREMENTS)
+│   ├── Project 1: Course Homepage
+│   ├── Project 2.1: Research Paper
+│   ├── Project 2.2: HTML/CSS Implementation
+│   ├── Project 3: Multi-Page Site
+│   ├── Project 4: Responsive Redesign
+│   ├── Cross-Project Requirements
+│   ├── Accessibility Standards
+│   ├── Validation Requirements
+│   └── Submission Checklist
+│
+├── DIRECTORY_STRUCTURE.md (FILE ORGANIZATION)
+│   ├── Canonical Directory Structure
+│   ├── File Inventory by Project
+│   ├── Current vs Canonical Layout
+│   ├── File Naming Conventions
+│   ├── Migration Guide
+│   └── Cleanup & Archiving
+│
+├── FILE_INVENTORY.md (STATUS TRACKING)
+│   ├── Project 1 Inventory
+│   ├── Project 2.1 Inventory
+│   ├── Project 2.2 Inventory
+│   ├── Project 3 Inventory
+│   ├── Project 4 Inventory
+│   ├── Shared Assets Inventory
+│   ├── Deployment Status
+│   ├── Validation Status
+│   └── Final Submission Checklist
+│
+├── AUTOMATION_GUIDE.md (DEPLOYMENT & SCRIPTS)
+│   ├── Quick Start
+│   ├── PowerShell Scripts (deploy.ps1, package_site.ps1, etc.)
+│   ├── Python Utilities (upload_22.py, etc.)
+│   ├── SFTP Manual Deployment (WinSCP, OwlFiles)
+│   ├── Troubleshooting
+│   └── Best Practices
+│
+├── DOCUMENTATION_INDEX.md (THIS FILE)
+│   └── Navigation guide and reference table
+│
+└── README.md (Repository overview - level up)
+```
+
+---
+
+## 📋 Document Key Features
+
+### COMPLETE_PACKAGING_GUIDE.md
+
+**Use for**:
+- Getting the big picture
+- Understanding workflows
+- Finding answers to common questions
+- Pre-submission planning
+
+**Key Sections**:
+- Quick Start (5 min overview)
+- Complete Workflow (4 phases)
+- Project summaries (all 5 projects)
+- Quality assurance checklist
+- FAQs & troubleshooting
+
+---
+
+### PROJECT_REQUIREMENTS.md
+
+**Use for**:
+- Understanding specific project requirements
+- Knowing what's graded
+- Learning best practices for each project
+- Finding rubric criteria
+
+**Key Sections**:
+- Detailed rubrics (50-150 points per project)
+- Technical requirements
+- Examples and templates
+- Accessibility standards
+- Validation requirements
+
+---
+
+### DIRECTORY_STRUCTURE.md
+
+**Use for**:
+- Organizing your files correctly
+- Finding where to put things
+- Understanding file naming
+- Migrating from old structure
+
+**Key Sections**:
+- Canonical directory structure (diagram)
+- File inventory by project
+- Migration guide
+- File naming conventions
+- Quick reference checklist
+
+---
+
+### FILE_INVENTORY.md
+
+**Use for**:
+- Tracking project progress
+- Maintaining status for each file
+- Pre-submission verification
+- Documenting validation results
+
+**Key Sections**:
+- Per-project inventories
+- Content audits
+- Validation status tables
+- Deployment checklist
+- Final submission checklist
+
+---
+
+### AUTOMATION_GUIDE.md
+
+**Use for**:
+- Deploying to server
+- Running validation scripts
+- Understanding deployment scripts
+- Troubleshooting upload issues
+
+**Key Sections**:
+- Quick start (one-command deployment)
+- PowerShell script documentation
+- Python utility documentation
+- Manual SFTP instructions
+- Troubleshooting guide
+
+---
+
+## 💡 Quick Reference Tables
+
+### All Project URLs
+
+| Project | File | Serve URL |
+|---------|------|-----------|
+| 1 | `rock-INF6420-index.html` | `http://141.217.120.86/fn9575/html/rock-INF6420-index.html` |
+| 2.1 | `rock-project2.1.docx` | `http://141.217.120.86/fn9575/html/inf6420-projects/rock-project2.1.docx` |
+| 2.2 | `rock-project2-2.html` | `http://141.217.120.86/fn9575/html/inf6420-projects/rock-project2-2.html` |
+| 3 | `project3/home.html` | `http://141.217.120.86/fn9575/html/inf6420-projects/project3/home.html` |
+| 4 | `project4/home.html` | `http://141.217.120.86/fn9575/html/inf6420-projects/project4/home.html` |
+
+### All Project Points
+
+| Project | Points | Type |
+|---------|--------|------|
+| 1 | 50 | Web |
+| 2.1 | 100 | Research |
+| 2.2 | 100 | Web |
+| 3 | 150 | Web |
+| 4 | 150 | Web |
+| **Total** | **550** | **Mixed** |
+
+### Key Commands
+
+```bash
+# Validate all files
+.\scripts\validate_all.ps1
+
+# Create backup ZIP
+.\scripts\package_site.ps1
+
+# Deploy to server (requires VPN)
+.\scripts\deploy.ps1
+
+# View this documentation
+code docs/COMPLETE_PACKAGING_GUIDE.md
+```
+
+---
+
+## 🆘 Help! I Need to...
+
+| What I Need to Do | Document | Section |
+|-------------------|----------|---------|
+| Understand my project requirements | PROJECT_REQUIREMENTS.md | [Project 1/2.1/2.2/3/4] |
+| Know if my files are organized right | DIRECTORY_STRUCTURE.md | Current vs Canonical Layout |
+| Track my project's status | FILE_INVENTORY.md | [Project 1/2.1/2.2/3/4] Inventory |
+| Find where a file should go | DIRECTORY_STRUCTURE.md | File Inventory by Project |
+| Deploy my project | AUTOMATION_GUIDE.md | Quick Start or PowerShell Scripts |
+| Troubleshoot a problem | COMPLETE_PACKAGING_GUIDE.md | FAQs & Troubleshooting |
+| Learn about accessibility | PROJECT_REQUIREMENTS.md | Accessibility Standards |
+| Validate my HTML/CSS | COMPLETE_PACKAGING_GUIDE.md | Quality Assurance |
+| Fix deployment errors | AUTOMATION_GUIDE.md | Troubleshooting |
+| Understand the whole project | COMPLETE_PACKAGING_GUIDE.md | Project Overview or Complete Workflow |
+
+---
+
+## 📚 Related Resources
+
+### In This Repository
+
+- `README.md` – Repository overview and live URLs
+- `.github/copilot-instructions.md` – GitHub Copilot setup
+- `scripts/` – Automation scripts
+- `styles/brand.css` – Shared branding styles
+
+### External References
+
+- [MDN Web Docs](https://developer.mozilla.org/) – HTML/CSS reference
+- [W3C Validators](https://validator.w3.org/) – Code validation
+- [WCAG 2.1 Guidelines](https://www.w3.org/WAI/WCAG21/quickref/) – Accessibility
+- [CSS-Tricks](https://css-tricks.com/) – CSS tutorials
+- [WebAIM](https://webaim.org/) – Web accessibility
+
+---
+
+## 🔄 Document Version History
+
+| Version | Date | Changes |
+|---------|------|---------|
+| 1.0 | 2024 | Initial comprehensive documentation package |
+
+---
+
+## 📞 Support
+
+**Can't find what you need?**
+
+1. Use Ctrl+F (Find) to search this index
+2. Check the "Find Documentation by Task" table above
+3. Review the document structure overview
+4. Contact your instructor with specific questions
+
+---
+
+## ✅ Verification Checklist
+
+Before starting any project, verify you have:
+
+- [ ] Read the relevant section in `PROJECT_REQUIREMENTS.md`
+- [ ] Created correct folder structure per `DIRECTORY_STRUCTURE.md`
+- [ ] Created tracking sheet from `FILE_INVENTORY.md`
+- [ ] Understand the workflow in `COMPLETE_PACKAGING_GUIDE.md`
+- [ ] Know how to deploy using `AUTOMATION_GUIDE.md`
+
+---
+
+**Start with**: `COMPLETE_PACKAGING_GUIDE.md` § Quick Start (5 Minutes)
+
+**Then read**: Project-specific section in `PROJECT_REQUIREMENTS.md`
+
+**Good luck! 🚀**
