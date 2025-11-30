@@ -165,6 +165,11 @@ New-Item -ItemType Directory -Force -Path "images"
     </footer>
 </body>
 </html>
+"@ | Out-File -FilePath "rock-INF6420-index.html" -Encoding UTF8
+
+# Note: rock-project2.1.docx is a Word document; create manually or use a template
+
+@"
 <<<<<<< Updated upstream
 "@
 Create-FileWithContent -Path "rock-INF6420-index.html" -Content $content
@@ -509,7 +514,7 @@ $content = @"
 "@
 Create-FileWithContent -Path "inf6420-projects\project4\home.html" -Content $content
 
-# Similar for other project4 HTML files
+# Repeat for fox.html, red.html, gray.html, flying.html in project4 with same content but responsive CSS
 
 $content = @"
 =======
@@ -546,7 +551,7 @@ $content = @"
 "@
 Create-FileWithContent -Path "inf6420-projects\project4\fox.html" -Content $content
 
-# Repeat for red, gray, flying
+# Similar for red, gray, flying
 
 $content = @"
 =======
@@ -780,11 +785,10 @@ param(
 `$Password = Read-Host -AsSecureString "Enter password"
 `$Credential = New-Object System.Management.Automation.PSCredential (`$Username, `$Password)
 
-`$Session = New-SFTPSession -ComputerName `$Server -Credential `$Credential
-Set-SFTPItem -SessionId `$Session.SessionId -Path "." -Destination `$RemotePath -Recurse
-Remove-SFTPSession -SessionId `$Session.SessionId
-"@
-Create-FileWithContent -Path "scripts\deploy.ps1" -Content $content
+$Session = New-SFTPSession -ComputerName $Server -Credential $Credential
+Set-SFTPItem -SessionId $Session.SessionId -Path "." -Destination $RemotePath -Recurse
+Remove-SFTPSession -SessionId $Session.SessionId
+"@ | Out-File -FilePath "scripts/deploy.ps1" -Encoding UTF8
 
 # upload_22.py
 $content = @"
@@ -825,12 +829,10 @@ transport.close()
 "@
 Create-FileWithContent -Path "scripts\upload_22.py" -Content $content
 
-# package_site.ps1
-$content = @"
+@"
 # package_site.ps1 - Create ZIP for submission
 Compress-Archive -Path "." -DestinationPath "dist/inf6420-projects.zip" -Force
-"@
-Create-FileWithContent -Path "scripts\package_site.ps1" -Content $content
+"@ | Out-File -FilePath "scripts/package_site.ps1" -Encoding UTF8
 
 Write-Log "INF6420 project structure consolidation and population completed. Add images manually to image folders."
 =======
