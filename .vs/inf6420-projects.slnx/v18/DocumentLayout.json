@@ -3,12 +3,19 @@
   "WorkspaceRootPath": "C:\\Users\\k8roc\\source\\repos\\inf6420-projects\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\k8roc\\source\\repos\\inf6420-projects\\MISSING_FILES_DIAGNOSTIC.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:MISSING_FILES_DIAGNOSTIC.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\k8roc\\inf6420-projects\\project4\\intro-video.mp4||{25834150-CD7E-11D0-92DF-00A0C9138C45}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\k8roc\\source\\repos\\inf6420-projects\\WHERE_ARE_PROJECT_FILES.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:WHERE_ARE_PROJECT_FILES.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\k8roc\\source\\repos\\inf6420-projects\\WORKSPACE_AUDIT_COMPLETE.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:WORKSPACE_AUDIT_COMPLETE.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\k8roc\\source\\repos\\inf6420-projects\\MISSING_FILES_DIAGNOSTIC.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:MISSING_FILES_DIAGNOSTIC.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\k8roc\\source\\repos\\inf6420-projects\\FORENSIC_ANALYSIS_REPORT.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
@@ -56,10 +63,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\k8roc\\source\\repos\\inf6420-projects\\INSTANT_UPLOAD_OWNFILES_READY.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:INSTANT_UPLOAD_OWNFILES_READY.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\k8roc\\source\\repos\\inf6420-projects\\WHERE_ARE_PROJECT_FILES.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:WHERE_ARE_PROJECT_FILES.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
     }
   ],
   "DocumentGroupContainers": [
@@ -69,7 +72,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 10,
+          "SelectedChildIndex": 11,
           "Children": [
             {
               "$type": "Bookmark",
@@ -112,47 +115,62 @@
               "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
             },
             {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{c6f34f0d-7ae5-4f3a-be61-fe0c21ae9eb8}"
+            },
+            {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "intro-video.mp4",
+              "DocumentMoniker": "C:\\Users\\k8roc\\inf6420-projects\\project4\\intro-video.mp4",
+              "RelativeDocumentMoniker": "..\\..\\..\\inf6420-projects\\project4\\intro-video.mp4",
+              "ToolTip": "C:\\Users\\k8roc\\inf6420-projects\\project4\\intro-video.mp4",
+              "RelativeToolTip": "..\\..\\..\\inf6420-projects\\project4\\intro-video.mp4",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001836|",
+              "WhenOpened": "2025-11-30T05:10:35.414Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "MISSING_FILES_DIAGNOSTIC.md",
               "DocumentMoniker": "C:\\Users\\k8roc\\source\\repos\\inf6420-projects\\MISSING_FILES_DIAGNOSTIC.md",
               "RelativeDocumentMoniker": "MISSING_FILES_DIAGNOSTIC.md",
-              "ToolTip": "C:\\Users\\k8roc\\source\\repos\\inf6420-projects\\MISSING_FILES_DIAGNOSTIC.md",
-              "RelativeToolTip": "MISSING_FILES_DIAGNOSTIC.md",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAKAAAAAAAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\k8roc\\source\\repos\\inf6420-projects\\MISSING_FILES_DIAGNOSTIC.md*",
+              "RelativeToolTip": "MISSING_FILES_DIAGNOSTIC.md*",
+              "ViewState": "AgIAAJEAAAAAAAAAAAAmwJ4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
               "WhenOpened": "2025-11-30T03:52:41.873Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 1,
               "Title": "WHERE_ARE_PROJECT_FILES.md",
               "DocumentMoniker": "C:\\Users\\k8roc\\source\\repos\\inf6420-projects\\WHERE_ARE_PROJECT_FILES.md",
               "RelativeDocumentMoniker": "WHERE_ARE_PROJECT_FILES.md",
               "ToolTip": "C:\\Users\\k8roc\\source\\repos\\inf6420-projects\\WHERE_ARE_PROJECT_FILES.md",
               "RelativeToolTip": "WHERE_ARE_PROJECT_FILES.md",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEoAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAADwAAAAAAAAAAAAiwEoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
               "WhenOpened": "2025-11-30T03:53:57.81Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "WORKSPACE_AUDIT_COMPLETE.md",
               "DocumentMoniker": "C:\\Users\\k8roc\\source\\repos\\inf6420-projects\\WORKSPACE_AUDIT_COMPLETE.md",
               "RelativeDocumentMoniker": "WORKSPACE_AUDIT_COMPLETE.md",
               "ToolTip": "C:\\Users\\k8roc\\source\\repos\\inf6420-projects\\WORKSPACE_AUDIT_COMPLETE.md",
               "RelativeToolTip": "WORKSPACE_AUDIT_COMPLETE.md",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAMUAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAKcAAAAAAAAAAAAAAMUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
               "WhenOpened": "2025-11-30T03:40:13.714Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 15,
               "Title": "INSTANT_UPLOAD_OWNFILES_READY.md",
               "DocumentMoniker": "C:\\Users\\k8roc\\source\\repos\\inf6420-projects\\INSTANT_UPLOAD_OWNFILES_READY.md",
               "RelativeDocumentMoniker": "INSTANT_UPLOAD_OWNFILES_READY.md",
@@ -160,12 +178,11 @@
               "RelativeToolTip": "INSTANT_UPLOAD_OWNFILES_READY.md",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAHwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
-              "WhenOpened": "2025-11-30T03:45:46.443Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-30T03:45:46.443Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 14,
               "Title": "PRE_UPLOAD_CHECKLIST.md",
               "DocumentMoniker": "C:\\Users\\k8roc\\source\\repos\\inf6420-projects\\PRE_UPLOAD_CHECKLIST.md",
               "RelativeDocumentMoniker": "PRE_UPLOAD_CHECKLIST.md",
@@ -173,12 +190,11 @@
               "RelativeToolTip": "PRE_UPLOAD_CHECKLIST.md",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAMYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
-              "WhenOpened": "2025-11-30T03:45:31.479Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-30T03:45:31.479Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 13,
               "Title": "OWNFILES_QUICK_UPLOAD_PATHS.md",
               "DocumentMoniker": "C:\\Users\\k8roc\\source\\repos\\inf6420-projects\\OWNFILES_QUICK_UPLOAD_PATHS.md",
               "RelativeDocumentMoniker": "OWNFILES_QUICK_UPLOAD_PATHS.md",
@@ -186,12 +202,11 @@
               "RelativeToolTip": "OWNFILES_QUICK_UPLOAD_PATHS.md",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAHoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
-              "WhenOpened": "2025-11-30T03:45:15.1Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-30T03:45:15.1Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 12,
               "Title": "COMPLETE_FOLDER_STRUCTURE_OWNFILES.md",
               "DocumentMoniker": "C:\\Users\\k8roc\\source\\repos\\inf6420-projects\\COMPLETE_FOLDER_STRUCTURE_OWNFILES.md",
               "RelativeDocumentMoniker": "COMPLETE_FOLDER_STRUCTURE_OWNFILES.md",
@@ -199,12 +214,11 @@
               "RelativeToolTip": "COMPLETE_FOLDER_STRUCTURE_OWNFILES.md",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAGoBAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
-              "WhenOpened": "2025-11-30T03:45:04.007Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-30T03:45:04.007Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "FORENSIC_ANALYSIS_REPORT.md",
               "DocumentMoniker": "C:\\Users\\k8roc\\source\\repos\\inf6420-projects\\FORENSIC_ANALYSIS_REPORT.md",
               "RelativeDocumentMoniker": "FORENSIC_ANALYSIS_REPORT.md",
@@ -212,12 +226,11 @@
               "RelativeToolTip": "FORENSIC_ANALYSIS_REPORT.md",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAN0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
-              "WhenOpened": "2025-11-30T03:42:20.056Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-30T03:42:20.056Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "plan-33826622-a1e0-4047-bf44-a83c586aac80.md",
               "DocumentMoniker": "C:\\Users\\k8roc\\AppData\\Local\\Temp\\VisualStudio\\copilot-vs\\plan-33826622-a1e0-4047-bf44-a83c586aac80.md",
               "RelativeDocumentMoniker": "..\\..\\..\\AppData\\Local\\Temp\\VisualStudio\\copilot-vs\\plan-33826622-a1e0-4047-bf44-a83c586aac80.md",
@@ -230,7 +243,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 11,
               "Title": "rock-Project1.1.index.html",
               "DocumentMoniker": "C:\\Users\\k8roc\\source\\repos\\inf6420-projects\\inf6420-projects\\rock-Project1.1\\rock-Project1.1.index.html",
               "RelativeDocumentMoniker": "inf6420-projects\\rock-Project1.1\\rock-Project1.1.index.html",
@@ -238,12 +251,11 @@
               "RelativeToolTip": "inf6420-projects\\rock-Project1.1\\rock-Project1.1.index.html",
               "ViewState": "AgIAAGsAAAAAAAAAAABBwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2025-11-30T03:41:41.858Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-30T03:41:41.858Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 10,
               "Title": "index.html",
               "DocumentMoniker": "C:\\Users\\k8roc\\source\\repos\\inf6420-projects\\inf6420-projects\\rock-Project2.2\\index.html",
               "RelativeDocumentMoniker": "inf6420-projects\\rock-Project2.2\\index.html",
@@ -251,12 +263,11 @@
               "RelativeToolTip": "inf6420-projects\\rock-Project2.2\\index.html",
               "ViewState": "AgIAAC4AAAAAAAAAAABBwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2025-11-30T03:41:33.743Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-30T03:41:33.743Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 9,
               "Title": "index.html",
               "DocumentMoniker": "C:\\Users\\k8roc\\source\\repos\\inf6420-projects\\rock-Project2.1\\index.html",
               "RelativeDocumentMoniker": "rock-Project2.1\\index.html",
@@ -264,12 +275,11 @@
               "RelativeToolTip": "rock-Project2.1\\index.html",
               "ViewState": "AgIAACkAAAAAAAAAAIBJwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2025-11-30T03:39:30.769Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-30T03:39:30.769Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "rock-Project1.1.index.html",
               "DocumentMoniker": "C:\\Users\\k8roc\\source\\repos\\inf6420-projects\\rock-Project1.1\\rock-Project1.1.index.html",
               "RelativeDocumentMoniker": "rock-Project1.1\\rock-Project1.1.index.html",
@@ -277,12 +287,11 @@
               "RelativeToolTip": "rock-Project1.1\\rock-Project1.1.index.html",
               "ViewState": "AgIAAIcAAAAAAAAAAABBwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2025-11-30T03:38:59.792Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-30T03:38:59.792Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "index.html",
               "DocumentMoniker": "C:\\Users\\k8roc\\source\\repos\\inf6420-projects\\index.html",
               "RelativeDocumentMoniker": "index.html",
@@ -290,12 +299,11 @@
               "RelativeToolTip": "index.html",
               "ViewState": "AgIAANoAAAAAAAAAAABBwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2025-11-30T03:38:44.314Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-30T03:38:44.314Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "index.html",
               "DocumentMoniker": "C:\\Users\\k8roc\\source\\repos\\inf6420-projects\\inf6420-projects\\rock-Project2.1\\index.html",
               "RelativeDocumentMoniker": "inf6420-projects\\rock-Project2.1\\index.html",
@@ -303,8 +311,7 @@
               "RelativeToolTip": "inf6420-projects\\rock-Project2.1\\index.html",
               "ViewState": "AgIAACoAAAAAAAAAAABBwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2025-11-30T03:32:25.673Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-30T03:32:25.673Z"
             }
           ]
         }
